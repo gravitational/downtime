@@ -3,7 +3,7 @@ import NextHead from "next/head";
 const Head = () => {
   return (
     <NextHead>
-      <title>Dev Jokes 4 U</title>
+      <title>downtime.dev</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <style>
         @import

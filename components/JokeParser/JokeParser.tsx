@@ -32,7 +32,7 @@ const Joke = ({ joke }: JokeProps) => {
           />
         </div>
       )}
-      <div className="uppercase text-7xl mb-8">{joke.hl}</div>
+      <div className="uppercase text-7xl mb-8">{joke.headline}</div>
     </div>
   );
 };

@@ -1,1 +1,1 @@
-# downtime.dev
+# downtime

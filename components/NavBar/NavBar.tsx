@@ -6,9 +6,9 @@ import Link from "next/link";
 
 const NavBar = () => {
   return (
-    <nav className="flex justify-end w-full h-16 fixed top-0 bg-white ">
+    <nav className="flex justify-end w-full h-16 fixed top-0 bg-white z-50">
       <div className="flex justify-start w-2/4">
-        <div className="text-6xl uppercase font-playfair font-bold ml-5">downtime</div>
+        <div className="text-6xl uppercase font-playfair font-bold ml-5">downtime.dev</div>
       </div>
       <div className="flex justify-end w-2/4">
         <Hamburger>

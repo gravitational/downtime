@@ -1,4 +1,4 @@
-//image imports
+//image imports: static imports probably better for performance, but will need to test
 import bored from "../public/assets/images/bored@2x.jpg"
 import coffee from "../public/assets/images/coffee@2x.jpg"
 

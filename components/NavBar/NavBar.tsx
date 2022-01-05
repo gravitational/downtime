@@ -8,7 +8,7 @@ const NavBar = () => {
   return (
     <nav className="flex justify-end w-full h-16 fixed top-0 bg-white ">
       <div className="flex justify-start w-2/4">
-        <div className="text-6xl uppercase font-playfair font-bold ml-5">tonion</div>
+        <div className="text-6xl uppercase font-playfair font-bold ml-5">downtime</div>
       </div>
       <div className="flex justify-end w-2/4">
         <Hamburger>

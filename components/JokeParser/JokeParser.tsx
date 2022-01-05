@@ -23,7 +23,7 @@ const Joke = ({ joke }: JokeProps) => {
   return (
     <div className="mt-3 mb-11 mx-5 lg:mx-0 border-b-2 border-black" >
       {joke.image && (
-        <div className="h-64 w-64 relative border border-indigo-600 mb-5">
+        <div className="h-[484px] w-[728px] relative mb-5">
           <NextImage
             src={joke.image}
             alt=""

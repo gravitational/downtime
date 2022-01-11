@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import NextImage from "next/image";
-import { useRouter } from "next/router";
 import Link from "next/link";
 
 const NavBar = () => {

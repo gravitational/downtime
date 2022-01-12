@@ -1,17 +1,17 @@
 import NextImage from "next/image";
 import { HEADLINES, HeadlineProps } from "data/jokes";
 
+console.log("joke-count:", HEADLINES.length)
+
 const JokeParser = () => {
   return (
-    <>
-      <div className="flex justify-center w-full mt-[180px]">
-        <div className="flex flex-col align-center max-w-[1240px]">
-          {HEADLINES.map((joke: HeadlineProps, i) => (
-            <Joke joke={joke} key={`${i} + item`}/>
-          ))}
-        </div>
+    <div className="flex justify-center w-full">
+      <div id="centralizer" className="flex flex-col items-center max-w-[1240px]">
+        {HEADLINES.map((joke: HeadlineProps, i) => (
+          <Joke joke={joke} key={`${i} + item`} />
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 
@@ -21,18 +21,27 @@ interface JokeProps {
 
 const Joke = ({ joke }: JokeProps) => {
   return (
-    <div className="mt-3 mb-11 mx-5 lg:mx-0 border-b-2 border-black" >
+    <div
+      id="card"
+      className="flex flex-col items-center mb-10 mx-3 lg:mx-7 px-3 md:px-7 max-w-[660px] shadow-card "
+    >
+      <div className="text-xl lg:text-3xl leading-6 mt-3 md:mt-5 lg:mt-8 mb-3 md:mb-5 w-full ">
+        <span className="font-bold">{joke.smoker} </span>
+        {joke.headline}
+      </div>
       {joke.image && (
-        <div className="h-[484px] w-[728px] relative mb-5">
+        <div className="w-full mb-2 lg:mb-5 ">
           <NextImage
             src={joke.image}
-            alt=""
-            layout="fill"
-            objectFit="contain"
+            alt="a hilariously apropos image"
+            height="400px"
+            width="600px"
           />
         </div>
       )}
-      <div className="uppercase text-7xl mb-8">{joke.hl}</div>
+      <div className="w-full mb-3 lg:mb-7 text-gray-500 ">
+        share this breaking news: twitter, hackernews, facebook, linkedin
+      </div>
     </div>
   );
 };

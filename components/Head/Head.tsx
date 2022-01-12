@@ -7,7 +7,7 @@ const Head = () => {
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <style>
         @import
-        url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;500;700&display=swap');
+        url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');{" "}
       </style>
     </NextHead>
   );

@@ -1,6 +1,8 @@
 import NextImage from "next/image";
 import { HEADLINES, HeadlineProps } from "data/jokes";
 
+console.log("joke-count:", HEADLINES.length)
+
 const JokeParser = () => {
   return (
     <div className="flex justify-center w-full">

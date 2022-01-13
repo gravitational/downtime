@@ -101,6 +101,11 @@ export interface HeadlineProps {
     image: "/assets/images/cleanblinds@2x.png",
     pubDate: new Date(2022, 0, 11),
   },
+  {
+    headline: "Millions of Walmart.com Users Brought to Tears By Flawless Implementation of Eventual Consistency Algorithm",
+    image: "/assets/images/walmart@2x.png",
+    pubDate: new Date(2022, 0, 12),
+  },
 ]
 
 //sorted into order by MOST RECENT DATE FIRST

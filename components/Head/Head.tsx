@@ -1,6 +1,10 @@
 import NextHead from "next/head";
 
-const Head = () => {
+interface HeadProps {
+  children: JSX.Element
+}
+
+const Head = ({ children}: HeadProps) => {
   return (
     <NextHead>
       <title>downtime.dev</title>

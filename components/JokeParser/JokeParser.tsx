@@ -42,7 +42,7 @@ const Joke = ({ joke }: JokeProps) => {
         </div>
       )}
       <div className="w-full mb-3 lg:mb-7 text-gray-500 ">
-        share this on <Link href={tweetEncoder(joke.headline)}><a target="_blank" rel="noopener noreferrer">twitter</a></Link>
+        share this on <Link href={tweetEncoder(joke.headline)}><a target="_blank" rel="noopener noreferrer"><span className="text-gray-700">twitter</span></a></Link>
       </div>
     </div>
   );

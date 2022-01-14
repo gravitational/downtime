@@ -106,6 +106,21 @@ export interface HeadlineProps {
     image: "/assets/images/walmart@2x.png",
     pubDate: new Date(2022, 0, 12),
   },
+  {
+    headline: "80,000 Lines of Code No Match For 12-Year-Old Hacker",
+    image: "/assets/images/kidhacker@2x.jpg",
+    pubDate: new Date(2022, 0, 13),
+  },
+  {
+    headline: "Microsoft Posts Job Listing Looking for “Someone Good WIth Computers”",
+    image: "/assets/images/microsoft@2x.jpg",
+    pubDate: new Date(2022, 0, 13),
+  },
+  {
+    headline: "All Of Hackers New Year’s Resolutions Involve Crippling Infrastructure",
+    image: "/assets/images/oilpipe@2x.jpg",
+    pubDate: new Date(2022, 0, 13),
+  },
 ]
 
 //sorted into order by MOST RECENT DATE FIRST

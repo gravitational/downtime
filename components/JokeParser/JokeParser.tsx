@@ -1,5 +1,7 @@
 import NextImage from "next/image";
+import Link from "next/link";
 import { HEADLINES, HeadlineProps } from "data/jokes";
+import { tweetEncoder } from "utilities/encoder";
 
 console.log("joke-count:", HEADLINES.length)
 
@@ -40,7 +42,7 @@ const Joke = ({ joke }: JokeProps) => {
         </div>
       )}
       <div className="w-full mb-3 lg:mb-7 text-gray-500 ">
-        share this breaking news: twitter, hackernews, facebook, linkedin
+        share this on <Link href={tweetEncoder(joke.headline)}><a target="_blank" rel="noopener noreferrer">twitter</a></Link>
       </div>
     </div>
   );

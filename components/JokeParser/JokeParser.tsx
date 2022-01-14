@@ -22,6 +22,10 @@ interface JokeProps {
 }
 
 const Joke = ({ joke }: JokeProps) => {
+
+  const anchorString = joke.anchor? joke.anchor.toString() : "00000"
+  const hrefString = tweetEncoder(joke.headline, anchorString)
+
   return (
     <div
       id="card"
@@ -29,7 +33,7 @@ const Joke = ({ joke }: JokeProps) => {
     >
       <div className="text-xl lg:text-3xl leading-6 mt-3 md:mt-5 lg:mt-8 mb-3 md:mb-5 w-full ">
         <span className="font-bold">{joke.smoker} </span>
-        {joke.headline}
+        <a id={anchorString}>{joke.headline}</a>
       </div>
       {joke.image && (
         <div className="w-full mb-2 lg:mb-5 ">
@@ -42,7 +46,7 @@ const Joke = ({ joke }: JokeProps) => {
         </div>
       )}
       <div className="w-full mb-3 lg:mb-7 text-gray-500 ">
-        share this on <Link href={tweetEncoder(joke.headline)}><a target="_blank" rel="noopener noreferrer"><span className="text-gray-700">twitter</span></a></Link>
+        share this on <Link href={hrefString}><a target="_blank" rel="noopener noreferrer"><span className="text-gray-700">twitter</span></a></Link>
       </div>
     </div>
   );

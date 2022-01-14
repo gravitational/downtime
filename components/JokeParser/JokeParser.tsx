@@ -24,7 +24,7 @@ interface JokeProps {
 const Joke = ({ joke }: JokeProps) => {
 
   const anchorString = joke.anchor? joke.anchor.toString() : "00000"
-  const hrefString = tweetEncoder(joke.headline, anchorString)
+  const hrefString = tweetEncoder(joke.headline, anchorString, joke.twitterImage)
 
   return (
     <div

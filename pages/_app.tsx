@@ -5,14 +5,16 @@ import type { AppProps } from "next/app";
 import Layout from "components/Layout";
 import Head from "components/Head";
 import "../styles/globals.css";
-import * as ga from "utilities/google_analytics";
+import { GApageview} from "utilities/google_analytics";
+import { GTMpageview } from "utilities/google_tag_manager";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   useEffect(() => {
     const handleRouteChange = (url: any) => {
-      ga.pageview(url)
+      GApageview(url) //log for google analytics
+      GTMpageview(url) //log for google tag manager
     }
     //When the component is mounted, subscribe to router changes
     //and log those page views

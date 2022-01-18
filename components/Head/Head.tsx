@@ -2,11 +2,8 @@ import NextHead from "next/head";
 import { useRouter } from "next/router"
 
 
-interface HeadProps {
-  children: JSX.Element
-}
 
-const Head = ({ children }: HeadProps) => {
+const Head = () => {
   const router = useRouter();
   const url = router.asPath
 

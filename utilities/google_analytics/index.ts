@@ -6,7 +6,7 @@ export const pageview = (url: any) => {
   })
 }
 
-// log specific events happening.
+// log specific events happening - this is currently unused fucntionality
 
 //@ts-ignore
 export const event = ({ action, params }) => {

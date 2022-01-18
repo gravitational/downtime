@@ -11,6 +11,8 @@ const Head = () => {
     <NextHead>
       <title>downtime.dev</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <link rel="icon" href="/assets/favicon.ico" />
+      <meta name="description" content="Hard-hitting tech news while your code compiles." />
       <style>
         @import
         url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');{" "}

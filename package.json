@@ -19,6 +19,7 @@
     "tailwindcss": "^2.2.19"
   },
   "devDependencies": {
+    "@types/gtag.js": "^0.0.8",
     "@types/node": "^16.11.12",
     "@types/react": "^17.0.37",
     "eslint": "8.4.1",

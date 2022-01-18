@@ -8,7 +8,6 @@ import Head from "components/Head";
 import "../styles/globals.css";
 import { GTMPageView } from "utilities";
 
-
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
@@ -19,33 +18,18 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     router.events.on("routeChangeComplete", onRouteChangeComplete);
 
-    const cleanup = () => router.events.off("routeChangeComplete", onRouteChangeComplete);
+    const cleanup = () =>
+      router.events.off("routeChangeComplete", onRouteChangeComplete);
 
     return cleanup;
-  }, [router.events, router.query])
-
+  }, [router.events, router.query]);
 
   return (
     <>
       <Head>
-        <GTM/>
-      </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </>
-  );
-}
-
-export default MyApp;
-
-function GTM() {
-  return (
-    <>
-      {process.env.NEXT_PUBLIC_GTM_ID && (
         <>
-          {/* Google Tag Manager */}
-          <Script id="script_gtm">
+        {/* Google Tag Manager */}
+        <Script id="script_gtm">
             {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
                   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -61,11 +45,7 @@ function GTM() {
             }}
           />
           {/* End Google Tag Manager (noscript) */}
-        </>
-      )}
-      {process.env.NEXT_PUBLIC_GTAG_ID && (
-        <>
-          {/* GTag */}
+        {/* GTag */}
           <Script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GTAG_ID}`}
@@ -76,9 +56,14 @@ function GTM() {
                   gtag('js', new Date());
                   gtag('config', "${process.env.NEXT_PUBLIC_GTAG_ID}");`}
           </Script>
-          {/* End GTag */}
+        {/* End GTag */}
         </>
-      )}
+      </Head>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }
+
+export default MyApp;

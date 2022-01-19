@@ -6,7 +6,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Ubuntu Mono', monospace;}
+  font-family: 'Ubuntu Mono', monospace;
+}
 
 a {
   color: inherit;

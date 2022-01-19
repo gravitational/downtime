@@ -4,12 +4,16 @@ interface Event {
 }
 
 declare global {
-  var dataLayer: Event[]
+  var dataLayer: Event[];
 }
 
+const isGTMEnabled = () => typeof window !== "undefined" && !!window.dataLayer;
+
 export const GTMpageview = (url: string) => {
-  window.dataLayer.push({
-    event: 'pageview',
-    page: url,
-  })
-}
+  if (isGTMEnabled()) {
+    window.dataLayer.push({
+      event: "pageview",
+      page: url,
+    });
+  }
+};

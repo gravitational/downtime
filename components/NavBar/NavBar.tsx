@@ -13,11 +13,6 @@ const NavBar = () => {
         </Link>
       </div>
       <div className="flex justify-center w-2/4">
-      <Link href="/contact">
-        <a className="text-xl flex flex-col justify-center text-gray-300">
-          contact
-        </a>
-      </Link>
       </div>
     </nav>
   );

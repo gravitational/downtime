@@ -34,6 +34,7 @@ const Joke = ({ joke }: JokeProps) => {
 
   return (
     <>
+      {/* Anchor is set above card so that navbar doesn't cover linked content */}
       <div className="relative -top-14">
         <a id={anchorString} rel="nofollow"></a>
       </div>
@@ -43,8 +44,7 @@ const Joke = ({ joke }: JokeProps) => {
       >
         <div className="text-xl lg:text-3xl leading-6 mt-3 md:mt-5 lg:mt-8 mb-3 md:mb-5 w-full ">
           <span className="font-bold">
-            {joke.smoker}
-            {joke.headline}
+            {joke.smoker} {joke.headline}
           </span>
         </div>
         {joke.image && (

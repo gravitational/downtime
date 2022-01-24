@@ -77,7 +77,7 @@ const RawJokes: HeadlineProps[] = [
   },
   {
     headline:
-      "SRE Hopes AI Remembers He One Of The Good Humans After Taking Over World",
+      "SRE Hopes AI Remembers He's One Of The Good Humans After Taking Over World",
     image: "/assets/images/goodhuman@2x.jpg",
     twitterImage: "pic.twitter.com/2FOJ8qam78FF",
     pubDate: new Date(2022, 0, 2),

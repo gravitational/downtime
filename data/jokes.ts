@@ -71,9 +71,9 @@ const RawJokes: HeadlineProps[] = [
     headline:
       "Don’t Stare, But Kelsey Hightower Just Walked Into This Barnes & Noble",
     image: "/assets/images/barnesAndNobleClackamas@2x.jpeg",
-    twitterImage: "pic.twitter.com/qPsCO5QVO6",
+    twitterImage: "pic.twitter.com/TCAe11Cto7",
     pubDate: new Date(2022, 0, 1),
-    anchor: 10007,
+    anchor: 100007,
   },
   {
     headline:

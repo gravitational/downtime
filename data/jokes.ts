@@ -177,6 +177,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 0, 14),
     anchor: 10006,
   },
+  {
+    headline:
+      "2022 To Be Year Man’s Identity Not Stolen",
+    image: "/assets/images/identityNotStolen@2x.jpg",
+    twitterImage: "pic.twitter.com/5xEXIOt58j",
+    pubDate: new Date(2022, 0, 27),
+    anchor: 10022,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

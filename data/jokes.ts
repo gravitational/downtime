@@ -70,7 +70,7 @@ const RawJokes: HeadlineProps[] = [
     smoker: "Breaking:",
     headline:
       "Don’t Stare, But Kelsey Hightower Just Walked Into This Barnes & Noble",
-    image: "/assets/images/barnesnoble@2x.jpg",
+    image: "/assets/images/barnesAndNobleKelseyNeighborhood@2x.jpeg",
     twitterImage: "pic.twitter.com/qPsCO5QVO6",
     pubDate: new Date(2022, 0, 1),
     anchor: 10007,

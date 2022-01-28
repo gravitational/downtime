@@ -47,7 +47,7 @@ Create an issue for image suggestions and website changes. A priority tag (`P1`,
 - **Image size:** Image size should be 1200px (horizontal) by 800px (vertical). The image name should be appended with `@2x` when added to the repo for optimal sizing by the browser.
 # Development Process
 
-## Daily Joke Publishing Protocal
+## Daily Joke Publishing Protocol
 1. Create a branch to add the daily joke.
 
 2. Select a joke and corresponding image from the "Ready To Deploy" section [here](https://docs.google.com/document/d/13T4yOefHZg2io-KqJ9r0XDzbBWr9kN4_HvyGNZ3-IZQ/edit#). Move your selected joke to the "Live" section of this document.

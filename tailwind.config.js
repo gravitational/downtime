@@ -6,7 +6,7 @@ module.exports = {
   mode: "jit",
   theme: {
     fontFamily: {
-      'bebas': ['"Bebas Neue"', 'cursive'], 
+      'bebas': ['"Bebas Neue"', 'cursive'],
       'montserrat': ['Montserrat', 'sans-serf'],
       'playfair': ['"Playfair Display"', 'serif']
     },
@@ -22,15 +22,16 @@ module.exports = {
       },
       backgroundImage: {
         'purple-web': "url('/assets/newsletter_web.png')"
-      }, 
+      },
       boxShadow: {
         "card": "0px 0px 4px 1px #D1D1D1"
       }
     }
   },
   variants: {
-    extend: {},
+    extend: {
+      display: ["group-hover"],
+    },
   },
   plugins: [],
 };
-

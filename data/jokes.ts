@@ -185,6 +185,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 0, 27),
     anchor: 10022,
   },
+  {
+    headline:
+      "Bot’s Mother Sad It No Longer Spams Her As Much As It Used To",
+    image: "/assets/images/botDoesntSpam@2x.png",
+    twitterImage: "pic.twitter.com/wVNpVKx6bP",
+    pubDate: new Date(2022, 0, 28),
+    anchor: 10023,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

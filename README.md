@@ -72,7 +72,7 @@ Create an issue for image suggestions and website changes. A priority tag (`P1`,
     image: "/assets/images/barnesAndNobleClackamas@2x.jpeg",
     twitterImage: "pic.twitter.com/TCAe11Cto7",
     pubDate: new Date(2022, 0, 1),
-    anchor: 100007,
+    anchor: 10007,
   },
 ```
 

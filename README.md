@@ -99,7 +99,7 @@ Create an issue for image suggestions and website changes. A priority tag (`P1`,
   charset="utf-8"
 ></script>
 ```
-Replace the existing value for `twitterImage` in `data/jokes.ts` with the twitter ID (`pic.twitter.com/5xEXIOt58j` in this example).
+Replace the existing value for `twitterImage` in `data/jokes.ts` with the Twitter ID (`pic.twitter.com/5xEXIOt58j` in this example).
 
 7. Joke update is now complete. To check that the link was correctly created, run locally and click "share this on twitter" from the new joke entry on localhost. Append the uniform resource locater created by Twitter to your local url: `localhost:3000/#10023`. This should route the browser directly to the newly added joke.
 

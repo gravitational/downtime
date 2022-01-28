@@ -1,5 +1,6 @@
 import NextImage from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { HEADLINES, HeadlineProps } from "data/jokes";
 import { tweetEncoder } from "utilities/encoder";
 
@@ -25,6 +26,10 @@ interface JokeProps {
 }
 
 const Joke = ({ joke }: JokeProps) => {
+  const [isShown, setIsShown] = useState(false);
+  const dateArray = joke.pubDate.toDateString().split(" ");
+  const [weekday, month, day, year] = dateArray;
+
   const anchorString = joke.anchor ? joke.anchor.toString() : "00000";
   const hrefString = tweetEncoder(
     joke.headline,
@@ -57,13 +62,29 @@ const Joke = ({ joke }: JokeProps) => {
             />
           </div>
         )}
-        <div className="w-full mb-3 lg:mb-7 text-gray-500 ">
-          share this on{" "}
-          <Link href={hrefString}>
-            <a target="_blank" rel="noopener noreferrer">
-              <span className="text-gray-700">twitter</span>
-            </a>
-          </Link>
+        <div className="flex flex-col w-full text-gray-500 relative">
+          <div className="flex flex-row w-full justify-between">
+            <div className="mb-3 lg:mb-7 ">
+              share this on{" "}
+              <Link href={hrefString}>
+                <a target="_blank" rel="noopener noreferrer">
+                  <span className="text-gray-700">twitter</span>
+                </a>
+              </Link>
+            </div>
+            <div
+              className="mb-3 lg:mb-7 mr-2 object-right w-24 text-right hover:underline"
+              onMouseEnter={() => setIsShown(true)}
+              onMouseLeave={() => setIsShown(false)}
+            >
+              {month} {day}
+            </div>
+          </div>
+          {isShown && (
+          <div className="bg-gray-500 text-white opacity-80 text-sm mr-2 z-[100] object-right absolute bottom-2 -right-5 inline-block text-right">
+            {weekday} &#183; {month} {day}, {year}
+            </div>
+           )}
         </div>
       </div>
     </>

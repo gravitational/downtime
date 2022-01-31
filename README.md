@@ -55,7 +55,7 @@ Create an issue for image suggestions and website changes. A priority tag (`P1`,
 3. Add new joke to the bottom of the `RawJokes` array in `data/jokes.ts` as shown:
 
 **Important:**
-  - `smoker`: If the joke begins with the word "report" or "breaker", add that word (include the `:`; no space) to the `smoker` key. Add the rest of the joke to the `headline` key
+  - `smoker`: If the joke begins with a word like "report" or "breaking", add that word (include the `:`; no space) to the optional `smoker` key. Add the rest of the joke to the `headline` key.
   - `pubDate`:
     - Month is zero-indexed. Jan = 0, Feb = 1, etc
     - Day is one-indexed. 1 = 1, 2 = 2, etc

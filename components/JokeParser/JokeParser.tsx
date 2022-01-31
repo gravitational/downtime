@@ -70,7 +70,7 @@ const Joke = ({ joke }: JokeProps) => {
                 </a>
               </Link>
             </div>
-            <div title={`${weekday} • ${month} ${day}, ${year}`} className="mb-3 lg:mb-7 mr-2 object-right w-24 text-right md:hover:text-black group">
+            <div title={`${weekday} • ${month} ${day}, ${year}`} className="mb-3 lg:mb-7 mr-2 object-right w-24 text-right hover:text-black">
               {month} {day}
             </div>
           </div>

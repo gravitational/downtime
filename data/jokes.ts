@@ -193,6 +193,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 0, 28),
     anchor: 10023,
   },
+  {
+    headline:
+      "Universe To Be Down Thursday While God Runs Software Update",
+    image: "/assets/images/universeDown@2x.jpg",
+    twitterImage: "pic.twitter.com/EVA3DP0eJz",
+    pubDate: new Date(2022, 0, 31),
+    anchor: 10024,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

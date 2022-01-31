@@ -201,6 +201,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 0, 31),
     anchor: 10024,
   },
+  {
+    headline:
+      "HR Department Gives SRE Humiliating New Title Of ‘Uptime Success Manager’",
+    image: "/assets/images/uptimeSuccessManager@2x.jpg",
+    twitterImage: "pic.twitter.com/PSCqAr860N",
+    pubDate: new Date(2022, 1, 1),
+    anchor: 10025,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

@@ -58,14 +58,14 @@ const GDPR = () => {
       {/* GDPR banner only renders if there is no existing gdpr cookie */}
       <div
         ref={gdprBanner}
-        className="fixed bottom-0 bg-black z-50 h-10 w-full text-white font-bold align-center flex flex-col justify-center"
+        className="fixed bottom-0 bg-black z-50 lg:h-10 w-full text-white font-bold align-center flex flex-col justify-center"
       >
-        <div className="flex justify-center">
+        <div className="flex justify-center my-2 mx-2 md:mx-5 align-center">
           This site uses cookies to improve user experience. By using this site,
           you agree to our use of cookies.
           <button
             onClick={handleClick}
-            className=" ml-10 px-1.5 border border-devGreen"
+            className="px-1.5 ml-5 mr-2 md:ml-10 border border-devGreen md:w-[80px] md:h-[28px] md:whitespace-nowrap self-center"
           >
             OK, boss
           </button>

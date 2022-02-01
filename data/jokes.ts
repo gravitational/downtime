@@ -94,7 +94,7 @@ const RawJokes: HeadlineProps[] = [
   {
     headline:
       "Millions of Walmart.com Users Brought to Tears By Flawless Implementation of Eventual Consistency Algorithm",
-    image: "/assets/images/walmart@2x.png",
+    image: "/assets/images/walmartCart@2x.png",
     twitterImage: "pic.twitter.com/OB7MKCV0H5",
     pubDate: new Date(2022, 0, 4),
     anchor: 10017,

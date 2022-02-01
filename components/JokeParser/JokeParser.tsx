@@ -25,6 +25,9 @@ interface JokeProps {
 }
 
 const Joke = ({ joke }: JokeProps) => {
+  const dateArray = joke.pubDate.toDateString().split(" ");
+  const [weekday, month, day, year] = dateArray;
+
   const anchorString = joke.anchor ? joke.anchor.toString() : "00000";
   const hrefString = tweetEncoder(
     joke.headline,
@@ -57,13 +60,20 @@ const Joke = ({ joke }: JokeProps) => {
             />
           </div>
         )}
-        <div className="w-full mb-3 lg:mb-7 text-gray-500 ">
-          share this on{" "}
-          <Link href={hrefString}>
-            <a target="_blank" rel="noopener noreferrer">
-              <span className="text-gray-700">twitter</span>
-            </a>
-          </Link>
+        <div className="flex flex-col w-full text-gray-500 relative">
+          <div className="flex flex-row w-full justify-between">
+            <div className="mb-3 lg:mb-7 ">
+              share this on{" "}
+              <Link href={hrefString}>
+                <a target="_blank" rel="noopener noreferrer">
+                  <span className="text-gray-700">twitter</span>
+                </a>
+              </Link>
+            </div>
+            <div title={`${weekday} • ${month} ${day}, ${year}`} className="mb-3 lg:mb-7 mr-2 object-right w-24 text-right hover:text-black">
+              {month} {day}
+            </div>
+          </div>
         </div>
       </div>
     </>

@@ -1,10 +1,8 @@
-import App from "next/app";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import type { AppProps } from "next/app";
 import Layout from "components/Layout";
 import Head from "components/Head";
-import Script from "next/script";
 import "../styles/globals.css";
 import { pageview } from "utilities/google";
 

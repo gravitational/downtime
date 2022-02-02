@@ -208,6 +208,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 1, 1),
     anchor: 10025,
   },
+  {
+    headline:
+      "DevOps Engineer Chatting With Verizon Customer Service Can’t Wait For Epic Reveal He’s Actually Quite Familiar With TCP/IP Settings",
+    image: "/assets/images/TCP-IP-settings@2x.jpg",
+    twitterImage: "pic.twitter.com/YsTq6ozlCV",
+    pubDate: new Date(2022, 1, 2),
+    anchor: 10026,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

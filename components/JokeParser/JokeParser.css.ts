@@ -1,5 +1,4 @@
 import { style } from "@vanilla-extract/css";
-import exp from "constants";
 
 export const outer = style({
   display: "flex",

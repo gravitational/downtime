@@ -3,7 +3,6 @@ import Link from "next/link";
 import { HEADLINES, HeadlineProps } from "data/jokes";
 import { tweetEncoder } from "utilities/encoder";
 import * as styles from "./JokeParser.css"
-import { style } from "@vanilla-extract/css";
 
 console.log("joke-count:", HEADLINES.length);
 

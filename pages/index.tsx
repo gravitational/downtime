@@ -1,7 +1,7 @@
 import { JokeParser } from "components/JokeParser";
 import NextImage from "next/image";
 import logo from "../public/assets/images/downtimeLogo.png"
-import * as styles from "./index.css"
+import * as styles from "../components/index.css"
 
 
 export default function Home() {

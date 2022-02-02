@@ -17,6 +17,8 @@ const GDPR = () => {
     });
 
     //updates permissions for gtag to function
+    //this code needs to be tested with a VPN - Cole
+    //eslint-disable-next-line
     gtag("consent", "update", {
       ad_storage: "granted",
       analytics_storage: "granted",

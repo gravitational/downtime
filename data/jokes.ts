@@ -185,16 +185,14 @@ const RawJokes: HeadlineProps[] = [
     anchor: 10022,
   },
   {
-    headline:
-      "Bot’s Mother Sad It No Longer Spams Her As Much As It Used To",
+    headline: "Bot’s Mother Sad It No Longer Spams Her As Much As It Used To",
     image: "/assets/images/botDoesntSpam@2x.png",
     twitterImage: "pic.twitter.com/wVNpVKx6bP",
     pubDate: new Date(2022, 0, 28),
     anchor: 10023,
   },
   {
-    headline:
-      "Universe To Be Down Thursday While God Runs Software Update",
+    headline: "Universe To Be Down Thursday While God Runs Software Update",
     image: "/assets/images/universeDown@2x.jpg",
     twitterImage: "pic.twitter.com/EVA3DP0eJz",
     pubDate: new Date(2022, 0, 31),
@@ -215,6 +213,14 @@ const RawJokes: HeadlineProps[] = [
     twitterImage: "pic.twitter.com/YsTq6ozlCV",
     pubDate: new Date(2022, 1, 2),
     anchor: 10026,
+  },
+  {
+    smoker: "Breaking:",
+    headline: "Manager Just Needs Quick 5-6 Hours Of Your Time",
+    image: "/assets/images/managerChat@2x.jpg",
+    twitterImage: "pic.twitter.com/CCPOrsqhh0",
+    pubDate: new Date(2022, 1, 3),
+    anchor: 10027,
   },
 ];
 

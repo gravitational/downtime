@@ -222,6 +222,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 1, 3),
     anchor: 10027,
   },
+  {
+    headline:
+      "SRE Freaking Out At Realization 97% Of Life Just Monotonous Tasks That Can’t Be Automated",
+    image: "/assets/images/monotonousTasks@2x.jpg",
+    twitterImage: "pic.twitter.com/aWYHOVtqCP",
+    pubDate: new Date(2022, 1, 4),
+    anchor: 10028,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

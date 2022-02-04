@@ -55,8 +55,8 @@ const Joke = ({ joke }: JokeProps) => {
             <NextImage
               src={joke.image}
               alt="a hilariously apropos image"
-              // height="400px"
-              // width="600px"
+              height="400px"
+              width="600px"
             />
           </div>
         )}

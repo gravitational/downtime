@@ -1,10 +1,7 @@
-//image imports: static imports probably better for performance, but will need to test
-import coffee from "../public/assets/images/coffee@2x.jpg";
-
 export interface HeadlineProps {
   smoker?: string;
   headline: string;
-  image?: StaticImageData | string;
+  image?: string;
   twitterImage: string;
   pubDate: Date;
   anchor?: number;
@@ -157,7 +154,7 @@ const RawJokes: HeadlineProps[] = [
   {
     smoker: "Report:",
     headline: "Spilled Coffee Remains Nation's Leading Cybersecurity Threat",
-    image: coffee,
+    image: "/assets/images/coffee@2x.jpg",
     twitterImage: "pic.twitter.com/2359Rql36C",
     pubDate: new Date(2022, 0, 12),
     anchor: 10000,

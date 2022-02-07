@@ -1,4 +1,4 @@
-import * as fs from "fs";
+import { writeFileSync } from "fs";
 const RSS = require("rss");
 import { HEADLINES } from "../data/jokes";
 
@@ -19,7 +19,7 @@ function generate() {
     });
   });
 
-  fs.writeFileSync("./public/feed.xml", feed.xml({ indent: true }));
+  writeFileSync("./public/feed.xml", feed.xml({ indent: true }));
 }
 
 generate();

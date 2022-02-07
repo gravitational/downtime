@@ -225,7 +225,7 @@ const RawJokes: HeadlineProps[] = [
 
   {
     headline:
-      "Precocious Bot Getting Pretty Good At Telling DIfference Between CAPTCHA Bridges, Cars",
+      "Precocious Bot Getting Pretty Good At Telling Difference Between CAPTCHA Bridges, Cars",
     image: "/assets/images/bridges@2x.png",
     twitterImage: "pic.twitter.com/CUIk1z98cF",
     pubDate: new Date(2022, 1, 7),

@@ -222,12 +222,13 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 1, 3),
     anchor: 10027,
   },
+
   {
     headline:
-      "SRE Freaking Out At Realization 97% Of Life Just Monotonous Tasks That Can’t Be Automated",
-    image: "/assets/images/monotonousTasks@2x.jpg",
-    twitterImage: "pic.twitter.com/aWYHOVtqCP",
-    pubDate: new Date(2022, 1, 4),
+      "Precocious Bot Getting Pretty Good At Telling Difference Between CAPTCHA Bridges, Cars",
+    image: "/assets/images/bridges@2x.png",
+    twitterImage: "pic.twitter.com/CUIk1z98cF",
+    pubDate: new Date(2022, 1, 7),
     anchor: 10028,
   },
 ];

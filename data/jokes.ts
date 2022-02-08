@@ -1,3 +1,13 @@
+//image imports: static imports probably better for performance, but will need to test
+// import coffee from "../public/assets/images/coffee@2x.jpg";
+
+// Workaround related to: https://github.com/vercel/next.js/issues/29788
+declare type StaticImageData = {
+  src: string;
+  height: number;
+  width: number;
+  placeholder?: string;
+};
 export interface HeadlineProps {
   smoker?: string;
   headline: string;
@@ -219,7 +229,6 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 1, 3),
     anchor: 10027,
   },
-
   {
     headline:
       "Precocious Bot Getting Pretty Good At Telling Difference Between CAPTCHA Bridges, Cars",
@@ -227,6 +236,14 @@ const RawJokes: HeadlineProps[] = [
     twitterImage: "pic.twitter.com/CUIk1z98cF",
     pubDate: new Date(2022, 1, 7),
     anchor: 10028,
+  },
+  {
+    headline:
+      "SRE Sits Child Down To Have 'Birds, Bees and Cap Theorem' Talk",
+    image: "/assets/images/birdsBeesCapTalk@2x.jpg",
+    twitterImage: "pic.twitter.com/vWmyeyiL6V",
+    pubDate: new Date(2022, 1, 8),
+    anchor: 10029,
   },
 ];
 

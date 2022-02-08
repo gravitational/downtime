@@ -1,10 +1,17 @@
 //image imports: static imports probably better for performance, but will need to test
-import coffee from "../public/assets/images/coffee@2x.jpg";
+// import coffee from "../public/assets/images/coffee@2x.jpg";
 
+// Workaround related to: https://github.com/vercel/next.js/issues/29788
+declare type StaticImageData = {
+  src: string;
+  height: number;
+  width: number;
+  placeholder?: string;
+};
 export interface HeadlineProps {
   smoker?: string;
   headline: string;
-  image?: StaticImageData | string;
+  image?: string;
   twitterImage: string;
   pubDate: Date;
   anchor?: number;
@@ -157,7 +164,7 @@ const RawJokes: HeadlineProps[] = [
   {
     smoker: "Report:",
     headline: "Spilled Coffee Remains Nation's Leading Cybersecurity Threat",
-    image: coffee,
+    image: "/assets/images/coffee@2x.jpg",
     twitterImage: "pic.twitter.com/2359Rql36C",
     pubDate: new Date(2022, 0, 12),
     anchor: 10000,
@@ -185,16 +192,14 @@ const RawJokes: HeadlineProps[] = [
     anchor: 10022,
   },
   {
-    headline:
-      "Bot’s Mother Sad It No Longer Spams Her As Much As It Used To",
+    headline: "Bot’s Mother Sad It No Longer Spams Her As Much As It Used To",
     image: "/assets/images/botDoesntSpam@2x.png",
     twitterImage: "pic.twitter.com/wVNpVKx6bP",
     pubDate: new Date(2022, 0, 28),
     anchor: 10023,
   },
   {
-    headline:
-      "Universe To Be Down Thursday While God Runs Software Update",
+    headline: "Universe To Be Down Thursday While God Runs Software Update",
     image: "/assets/images/universeDown@2x.jpg",
     twitterImage: "pic.twitter.com/EVA3DP0eJz",
     pubDate: new Date(2022, 0, 31),

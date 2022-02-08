@@ -5,7 +5,7 @@
     "dev": "next dev",
     "build": "tsc scripts/gen-rss.ts && node scripts/gen-rss.js && next build",
     "start": "next start",
-    "lint": "eslint --quiet \"(pages|components)/**/*.{js,jsx}\"",
+    "lint": "next lint",
     "format": "prettier --write \"(pages|components)/**/*.{js,jsx,ts,tsx,json}\""
   },
   "dependencies": {

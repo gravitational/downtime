@@ -12,8 +12,7 @@ const NavBar = () => {
           </a>
         </Link>
       </div>
-      <div className="flex justify-center w-2/4">
-      </div>
+      <div className="flex justify-center w-2/4"></div>
     </nav>
   );
 };
@@ -28,4 +27,3 @@ const LittleStack = () => (
     <div className="w-full h-1 bg-devGreen border-t border-black"></div>
   </div>
 );
-

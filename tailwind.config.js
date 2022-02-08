@@ -1,4 +1,5 @@
-const colors = require("tailwindcss/colors");
+//the following no longer seems necessary after upgrading to TW 3.0:
+// const colors = require("tailwindcss/colors");
 
 module.exports = {
   content: [

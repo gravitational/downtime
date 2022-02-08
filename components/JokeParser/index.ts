@@ -1,1 +1,1 @@
-export { default as JokeParser } from "./JokeParser"
+export { default as JokeParser } from "./JokeParser";

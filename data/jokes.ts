@@ -238,6 +238,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 1, 7),
     anchor: 10028,
   },
+  {
+    headline:
+      "SRE Sits Child Down To Have 'Birds, Bees and Cap Theorem' Talk",
+    image: "/assets/images/birdsBeesCapTalk@2x.jpg",
+    twitterImage: "pic.twitter.com/vWmyeyiL6V",
+    pubDate: new Date(2022, 1, 8),
+    anchor: 10029,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

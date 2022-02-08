@@ -245,15 +245,6 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 1, 8),
     anchor: 10029,
   },
-  {
-    smoker: "Testing:",
-    headline:
-      "Testing with smoker 2",
-    image: "/assets/images/birdsBeesCapTalk@2x.jpg",
-    twitterImage: "pic.twitter.com/vWmyeyiL6V",
-    pubDate: new Date(2022, 1, 9),
-    anchor: 10031,
-  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

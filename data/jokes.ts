@@ -248,11 +248,11 @@ const RawJokes: HeadlineProps[] = [
   {
     smoker: "Testing:",
     headline:
-      "Testing with smoker",
+      "Testing with smoker 2",
     image: "/assets/images/birdsBeesCapTalk@2x.jpg",
     twitterImage: "pic.twitter.com/vWmyeyiL6V",
-    pubDate: new Date(2022, 1, 8),
-    anchor: 10030,
+    pubDate: new Date(2022, 1, 9),
+    anchor: 10031,
   },
 ];
 

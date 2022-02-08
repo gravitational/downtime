@@ -8,11 +8,10 @@ declare type StaticImageData = {
   width: number;
   placeholder?: string;
 };
-
 export interface HeadlineProps {
   smoker?: string;
   headline: string;
-  image?: StaticImageData | string;
+  image?: string;
   twitterImage: string;
   pubDate: Date;
   anchor?: number;

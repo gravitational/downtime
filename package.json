@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "tsc scripts/gen-rss.ts && node scripts/gen-rss.js && next build",
     "start": "next start",
     "lint": "eslint --quiet \"(pages|components)/**/*.{js,jsx}\"",
     "format": "prettier --write \"(pages|components)/**/*.{js,jsx,ts,tsx,json}\""
@@ -21,7 +21,9 @@
     "postcss": "^8.4.6",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "rss": "^1.2.2",
     "tailwindcss": "^3.0.18"
+
   },
   "devDependencies": {
     "@types/gtag.js": "^0.0.8",

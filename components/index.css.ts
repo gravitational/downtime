@@ -10,10 +10,10 @@ export const outer = style({
 export const imageContainer = style({
   width: "50%",
   maxWidth: "600px",
-  marginTop: "3.5rem",
+  marginTop: "56px",
   "@media": {
     "screen and (min-width: 1024px)": {
-      marginTop: "4rem",
+      marginTop: "64px",
     },
   },
 });

@@ -4,7 +4,7 @@ export const nav = style({
   display: "flex",
   justifyContent: "flex-end",
   width: "100%",
-  height: "3rem",
+  height: "48px",
   position: "fixed",
   top: "0px",
   background: "black",
@@ -19,25 +19,25 @@ export const bar = style({
 })
 
 export const a = style({
-  fontSize: "1.25rem",
-  lineHeight: "1.75rem",
+  fontSize: "20px",
+  lineHeight: "28px",
   display: "flex",
   justifyContent: "center",
   color: "#07F901",
   fontWeight: "bold",
-  marginLeft: "0.5rem"
+  marginLeft: "8px"
 })
 
 export const outerStack = style({
   display: "flex",
-  width: "1rem",
+  width: "16px",
   flexDirection: "column",
   justifyContent: "center"
 })
 
 export const innerStack = style({
   width: "100%",
-  height: "0.25rem",
+  height: "4px",
   background: "#07F901",
   borderTop: "1px solid black"
 })

@@ -15,51 +15,51 @@ export const inner = style({
 
 export const anchorOuter = style({
   position: "relative",
-  top: "-3.5rem",
+  top: "-56px",
 });
 
 export const cardOuter = style({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  marginBottom: "2.5rem",
-  marginLeft: "0.75rem",
-  marginRight: "0.75rem",
-  paddingLeft: "0.75rem",
-  paddingRight: "0.75rem",
+  marginBottom: "40px",
+  marginLeft: "12px",
+  marginRight: "12px",
+  paddingLeft: "12px",
+  paddingRight: "12px",
   maxWidth: "660px",
   boxShadow: "0px 0px 4px 1px #D1D1D1",
 
   "@media": {
     "screen and (min-width: 1024px)": {
-      marginLeft: "1.75rem",
-      marginRight: "1.75rem",
+      marginLeft: "28px",
+      marginRight: "28px",
     },
     "screen and (min-width: 768px)": {
-      paddingRight: "1.75rem",
-      paddingLeft: "1.75rem",
+      paddingRight: "28px",
+      paddingLeft: "28px",
     },
   },
 });
 
 export const headline = style({
-  fontSize: "1.25rem",
-  lineHeight: "1.75rem",
-  marginTop: "0.75rem",
-  marginBottom: "0.75rem",
+  fontSize: "20px",
+  lineHeight: "28px",
+  marginTop: "12px",
+  marginBottom: "12px",
   width: "100%",
 
   "@media": {
     "screen and (min-width: 1024px)": {
-      fontSize: "1.875rem",
-      lineHeight: "2.25rem",
-      marginTop: "2rem",
+      fontSize: "30px",
+      lineHeight: "36px",
+      marginTop: "32px",
     },
     "screen and (min-width: 768px)": {
-      fontSize: "1.875rem",
-      lineHeight: "2.25rem",
-      marginTop: "2rem",
-      marginBottom: "1.25rem",
+      fontSize: "30px",
+      lineHeight: "36px",
+      marginTop: "32px",
+      marginBottom: "20px",
     },
   },
 });
@@ -70,10 +70,10 @@ export const span1 = style({
 
 export const imageContainer = style({
   width: "100%",
-  marginBottom: "0.5rem",
+  marginBottom: "8px",
   "@media": {
     "screen and (min-width: 1024px)": {
-      marginBottom: "1.25rem",
+      marginBottom: "20px",
     },
   },
 });
@@ -94,10 +94,10 @@ export const shareInner = style({
 });
 
 export const shareString = style({
-  marginBottom: "0.75rem",
+  marginBottom: "12px",
   "@media": {
     "screen and (min-width: 1024px)": {
-      marginBottom: "1.75rem",
+      marginBottom: "28px",
     },
   },
 });
@@ -107,10 +107,10 @@ export const span2 = style({
 });
 
 export const date = style({
-  marginBottom: "0.75rem",
-  marginRight: "0.5rem",
+  marginBottom: "12px",
+  marginRight: "8px",
   objectPosition: "right",
-  width: "6rem",
+  width: "96px",
   textAlign: "right",
   ":hover": {
     color: "black",
@@ -118,7 +118,7 @@ export const date = style({
 
   "@media": {
     "screen and (min-width: 1024px)": {
-      marginBottom: "1.75rem",
+      marginBottom: "28px",
     },
   },
 });

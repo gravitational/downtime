@@ -12,43 +12,49 @@ export const bannerContainer = style({
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
-  height: "2.5rem",
+  height: "auto",
+
+  "@media": {
+    "screen and (min-width: 1024px)": {
+      height: "40px",
+    },
+  },
 });
 
 export const banner = style({
   display: "flex",
   justifyContent: "center",
-  marginTop: "0.5rem",
-  marginBottom: "0.5rem",
-  marginLeft: "0.5rem",
-  marginRight: "0.5rem",
+  marginTop: "8px",
+  marginBottom: "8px",
+  marginLeft: "8px",
+  marginRight: "8px",
   alignItems: "center",
 
   "@media": {
     "screen and (min-width: 1024px)": {
-      marginLeft: "1.25rem",
-      marginRight: "1.25rem",
+      marginLeft: "20px",
+      marginRight: "20px",
     },
   },
 });
 
 export const button = style({
-  paddingLeft: "0.375rem",
-  paddingRight: "0.375rem",
+  paddingLeft: "6px",
+  paddingRight: "6px",
   paddingTop: "0",
   paddingBottom: "0",
-  marginLeft: "1.25rem",
-  marginRight: "0.5rem",
+  marginLeft: "20px",
+  marginRight: "8px",
   border: "1px solid #07F901",
   background: "black",
   color: "white",
   fontFamily: "inherit",
-  height: "28px",
+  height: "auto",
   fontSize: "100%",
 
   "@media": {
     "screen and (min-width: 768px)": {
-      marginLeft: "2.5rem",
+      marginLeft: "40px",
       width: "80px",
       height: "28px",
       whiteSpace: "nowrap",

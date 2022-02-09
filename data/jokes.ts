@@ -8,11 +8,10 @@ declare type StaticImageData = {
   width: number;
   placeholder?: string;
 };
-
 export interface HeadlineProps {
   smoker?: string;
   headline: string;
-  image?: StaticImageData | string;
+  image?: string;
   twitterImage: string;
   pubDate: Date;
   anchor?: number;
@@ -193,16 +192,14 @@ const RawJokes: HeadlineProps[] = [
     anchor: 10022,
   },
   {
-    headline:
-      "Bot’s Mother Sad It No Longer Spams Her As Much As It Used To",
+    headline: "Bot’s Mother Sad It No Longer Spams Her As Much As It Used To",
     image: "/assets/images/botDoesntSpam@2x.png",
     twitterImage: "pic.twitter.com/wVNpVKx6bP",
     pubDate: new Date(2022, 0, 28),
     anchor: 10023,
   },
   {
-    headline:
-      "Universe To Be Down Thursday While God Runs Software Update",
+    headline: "Universe To Be Down Thursday While God Runs Software Update",
     image: "/assets/images/universeDown@2x.jpg",
     twitterImage: "pic.twitter.com/EVA3DP0eJz",
     pubDate: new Date(2022, 0, 31),

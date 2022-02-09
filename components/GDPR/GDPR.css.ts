@@ -12,7 +12,13 @@ export const bannerContainer = style({
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
-  height: "40px",
+  height: "auto",
+
+  "@media": {
+    "screen and (min-width: 1024px)": {
+      height: "40px",
+    },
+  },
 });
 
 export const banner = style({
@@ -43,7 +49,7 @@ export const button = style({
   background: "black",
   color: "white",
   fontFamily: "inherit",
-  height: "28px",
+  height: "auto",
   fontSize: "100%",
 
   "@media": {

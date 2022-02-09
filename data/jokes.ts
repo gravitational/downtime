@@ -245,6 +245,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 1, 8),
     anchor: 10029,
   },
+  {
+    headline:
+      "OSS Maintainer Who Just Read Marie Kondo Excited To Delete All Issues That Don’t Spark Total Joy",
+    image: "/assets/images/marieKondo@2x.png",
+    twitterImage: "pic.twitter.com/uX5asnpFIz",
+    pubDate: new Date(2022, 1, 9),
+    anchor: 10030,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

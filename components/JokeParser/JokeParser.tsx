@@ -1,38 +1,39 @@
 import NextImage from "next/image";
 import Link from "next/link";
-import { HEADLINES, HeadlineProps } from "data/jokes";
+import { RawJoke } from "./types";
 import { tweetEncoder } from "utilities/encoder";
+interface JokeParserProps {
+  jokes: RawJoke[];
+}
 
-console.log("joke-count:", HEADLINES.length);
-
-const JokeParser = () => {
+const JokeParser = ({jokes}: JokeParserProps) => {
   return (
     <div className="flex justify-center w-full">
       <div
         id="centralizer"
         className="flex flex-col items-center max-w-[1240px]"
       >
-        {HEADLINES.map((joke: HeadlineProps, i) => (
-          <Joke joke={joke} key={`${i} + item`} />
-        ))}
+        {jokes.map(joke => <Joke joke={joke} key={joke.sys.id}/>)}
       </div>
     </div>
   );
 };
 
 interface JokeProps {
-  joke: HeadlineProps;
+  joke: RawJoke;
 }
 
 const Joke = ({ joke }: JokeProps) => {
-  const dateArray = joke.pubDate.toDateString().split(" ");
+  const { smoker, headline, image, twitterImage, date, anchor } = joke.fields;
+
+  const dateArray = new Date(date).toDateString().split(" ");
   const [weekday, month, day, year] = dateArray;
 
-  const anchorString = joke.anchor ? joke.anchor.toString() : "00000";
+  const anchorString = anchor || "00000";
   const hrefString = tweetEncoder(
-    joke.headline,
+    headline,
     anchorString,
-    joke.twitterImage
+    twitterImage
   );
 
   return (
@@ -47,13 +48,13 @@ const Joke = ({ joke }: JokeProps) => {
       >
         <div className="text-xl lg:text-3xl leading-6 mt-3 md:mt-5 lg:mt-8 mb-3 md:mb-5 w-full ">
           <span className="font-bold">
-            {joke.smoker} {joke.headline}
+            {smoker} {headline}
           </span>
         </div>
-        {joke.image && (
+        {image && (
           <div className="w-full mb-2 lg:mb-5 ">
             <NextImage
-              src={joke.image}
+              src={"https:" + image.fields.file.url}
               alt="a hilariously apropos image"
               height="400px"
               width="600px"

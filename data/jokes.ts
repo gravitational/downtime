@@ -253,6 +253,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 1, 9),
     anchor: 10030,
   },
+  {
+    headline:
+      "CEO Assuming Someone In Company Taking Care Of All That Cybersecurity Stuff",
+    image: "/assets/images/unsatisfiedCEO@2x.jpg",
+    twitterImage: "pic.twitter.com/wBrMkCBgpG",
+    pubDate: new Date(2022, 1, 10),
+    anchor: 10031,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

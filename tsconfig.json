@@ -16,6 +16,6 @@
     "incremental": true,
     "baseUrl": "."
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "utilities/encoder.js", "utilities/google/index.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "utilities/encoder.js", "utilities/google/gtag.ts"],
   "exclude": ["node_modules"]
 }

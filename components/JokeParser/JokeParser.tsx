@@ -2,7 +2,7 @@ import NextImage from "next/image";
 import Link from "next/link";
 import { RawJoke } from "./types";
 import { tweetEncoder } from "utilities/encoder";
-interface JokeParserProps {
+export interface JokeParserProps {
   jokes: RawJoke[];
 }
 

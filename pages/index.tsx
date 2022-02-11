@@ -1,9 +1,10 @@
 import { JokeParser, RawJoke } from "components/JokeParser";
+// import {  } from "components/JokeParser";
 import NextImage from "next/image";
 import logo from "../public/assets/images/downtimeLogo.png";
 import { createClient } from "contentful";
 export interface HomeProps {
-  jokes: RawJoke[];
+  jokes: RawJoke[]
 }
 
 export default function Home({ jokes }: HomeProps) {

@@ -1,25 +1,65 @@
 export interface RawJoke {
-  fields: {
-    headline: string;
-    image: {
-      fields: {
-        file: {
-          url: string;
-        };
-      };
-    };
-    twitterImage: string;
-    date: string;
-    twitterHtmlEmbedFull: string;
-    smoker: string;
-    anchor: string;
+  fields: Fields;
+  metadata: Metadata;
+  sys: JokeSys;
+}
+
+interface Fields {
+  headline: string;
+  image: Image;
+  twitterImage: string;
+  date: string;
+  twitterHtmlEmbedFull: string;
+  smoker: string;
+  anchor: string;
+}
+
+//image
+interface Image {
+  fields: ImageFields;
+  metadata: Metadata;
+  sys: ImageSys;
+  twitterHtmlEmbedFull: string;
+  twitterImage: string;
+}
+
+interface ImageFields {
+  file: {
+    url: string;
+    contentType: string;
+    details: {
+      image: {
+        height: number;
+        width: number;
+      }
+    }
   };
-  metadata: {};
-  sys: {
-    space: {};
-    id: string;
-    type: string;
-    createdAt: string;
-    updatedAt: string;
-  };
+  title: string;
+}
+
+interface ImageSys {
+  environment: InnerSysKeys;
+  createdAt: string;
+  id: string;
+  locale: string;
+  revision: number;
+  space: InnerSysKeys;
+  type: string;
+  updatedAt: string;
+}
+
+//metadata
+interface Metadata {
+  tags: string[];
+}
+interface JokeSys extends ImageSys {
+  contentType: InnerSysKeys;
+}
+interface InnerSysKeys {
+  sys: InnerSysDetails;
+}
+interface InnerSysDetails {
+  id: string;
+  linkType: string;
+  type: string;
 }

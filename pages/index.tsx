@@ -1,5 +1,4 @@
 import { JokeParser, RawJoke } from "components/JokeParser";
-// import {  } from "components/JokeParser";
 import NextImage from "next/image";
 import logo from "../public/assets/images/downtimeLogo.png";
 import { createClient } from "contentful";
@@ -24,7 +23,7 @@ export async function getStaticProps() {
     space: `${process.env.CONTENTFUL_SPACE_ID}`,
   });
 
-  const res = await client.getEntries({ content_type: "joke" });
+  const res = await client.getEntries({  content_type: "joke" });
 
   return {
     props: {

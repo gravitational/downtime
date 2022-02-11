@@ -1,4 +1,4 @@
-//image imports: static imports probably better for performance, but will need to test
+// image imports: static imports probably better for performance, but will need to test
 // import coffee from "../public/assets/images/coffee@2x.jpg";
 
 // Workaround related to: https://github.com/vercel/next.js/issues/29788

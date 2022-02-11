@@ -261,6 +261,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 1, 10),
     anchor: 10031,
   },
+  {
+    headline:
+      "App User Whose Bank Account Not Yet Emptied Disappointed To Learn New Software Update Just Fixed Log4j Bugs",
+    image: "/assets/images/womanDisappointed@2x.jpg",
+    twitterImage: "pic.twitter.com/d7Cpgu63WL",
+    pubDate: new Date(2022, 1, 11),
+    anchor: 10032,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

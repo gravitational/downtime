@@ -108,14 +108,6 @@ const RawJokes: HeadlineProps[] = [
   },
   {
     headline:
-      "Poll Finds Knowledge of Semantic Versioning Remains #1 Quality Americans Seeking In Romantic Partner",
-    image: "/assets/images/romance@2x.jpg",
-    twitterImage: "pic.twitter.com/2jrdX9AHnV",
-    pubDate: new Date(2022, 0, 5),
-    anchor: 10010,
-  },
-  {
-    headline:
       "Uninspired SRE Just Going Through The Motions Of Distributed Consensus Algorithm Optimization",
     image: "/assets/images/bored@2x.jpg",
     twitterImage: "pic.twitter.com/UquPxW74jE",
@@ -268,6 +260,14 @@ const RawJokes: HeadlineProps[] = [
     twitterImage: "pic.twitter.com/d7Cpgu63WL",
     pubDate: new Date(2022, 1, 11),
     anchor: 10032,
+  },
+  {
+    headline:
+      "Poll Finds Knowledge of Semantic Versioning Remains #1 Quality Americans Seeking In Romantic Partner",
+    image: "/assets/images/romance@2x.jpg",
+    twitterImage: "pic.twitter.com/2jrdX9AHnV",
+    pubDate: new Date(2022, 1, 14),
+    anchor: 10010,
   },
 ];
 

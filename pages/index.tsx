@@ -4,7 +4,7 @@ import logo from "../public/assets/images/downtimeLogo.png";
 import { createClient } from "contentful";
 import { generateFeed } from "../scripts/gen-rss";
 export interface HomeProps {
-  jokes: RawJoke[]
+  jokes: RawJoke[];
 }
 
 export default function Home({ jokes }: HomeProps) {
@@ -19,12 +19,15 @@ export default function Home({ jokes }: HomeProps) {
 }
 
 export async function getStaticProps() {
-  const client = createClient({
+  const contentfulClient = createClient({
     accessToken: `${process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN}`,
     space: `${process.env.CONTENTFUL_SPACE_ID}`,
   });
 
-  const res = await client.getEntries({  content_type: "joke" });
+  const res = await contentfulClient.getEntries({
+    content_type: "joke",
+    order: "-fields.date",
+  });
 
   await generateFeed(res.items as RawJoke[]);
 

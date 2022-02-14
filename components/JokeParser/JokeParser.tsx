@@ -2,20 +2,18 @@ import NextImage from "next/image";
 import Link from "next/link";
 import { RawJoke } from "./types";
 import { tweetEncoder } from "utilities/encoder";
-import { sortByDate } from "components/JokeParser/utilities/jokeUtils";
 export interface JokeParserProps {
   jokes: RawJoke[];
 }
 
 const JokeParser = ({jokes}: JokeParserProps) => {
-  const orderedJokes = sortByDate(jokes);
   return (
     <div className="flex justify-center w-full">
       <div
         id="centralizer"
         className="flex flex-col items-center max-w-[1240px]"
       >
-        {orderedJokes.map(joke => <Joke joke={joke} key={joke.sys.id}/>)}
+        {jokes.map(joke => <Joke joke={joke} key={joke.sys.id}/>)}
       </div>
     </div>
   );
@@ -26,7 +24,6 @@ interface JokeProps {
 }
 
 const Joke = ({ joke }: JokeProps) => {
-  console.log("joke", joke)
   const { smoker, headline, image, date, anchor } = joke.fields;
 
   const twitterImage = "pic.twitter.com/WQqBBlzIn8"
@@ -35,7 +32,7 @@ const Joke = ({ joke }: JokeProps) => {
   const [weekday, month, day, year] = dateArray;
 
   const anchorString = anchor || "00000";
-  console.log({anchor})
+
   const hrefString = tweetEncoder(
     headline,
     anchorString,

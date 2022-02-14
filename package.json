@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "tsc scripts/gen-rss.ts && node scripts/gen-rss.js && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"(pages|components)/**/*.{js,jsx,ts,tsx,json}\""

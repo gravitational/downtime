@@ -2,6 +2,7 @@ import { JokeParser, RawJoke } from "components/JokeParser";
 import NextImage from "next/image";
 import logo from "../public/assets/images/downtimeLogo.png";
 import { createClient } from "contentful";
+import { generateFeed } from "../scripts/gen-rss";
 export interface HomeProps {
   jokes: RawJoke[]
 }
@@ -24,6 +25,8 @@ export async function getStaticProps() {
   });
 
   const res = await client.getEntries({  content_type: "joke" });
+
+  await generateFeed(res.items as RawJoke[]);
 
   return {
     props: {

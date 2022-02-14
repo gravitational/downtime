@@ -1,3 +1,5 @@
+import { TagLink } from "contentful";
+
 export interface RawJoke {
   fields: Fields;
   metadata: Metadata;
@@ -50,7 +52,7 @@ interface ImageSys {
 
 //metadata
 interface Metadata {
-  tags: string[];
+  tags: TagLink[];
 }
 interface JokeSys extends ImageSys {
   contentType: InnerSysKeys;

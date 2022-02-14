@@ -269,6 +269,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 1, 11),
     anchor: 10032,
   },
+  {
+    headline:
+      "Nation Encouraged To Make Second Password",
+    image: "/assets/images/crowd@2x.jpg",
+    twitterImage: "pic.twitter.com/d7Cpgu63WL",
+    pubDate: new Date(2022, 1, 14),
+    anchor: 10033,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

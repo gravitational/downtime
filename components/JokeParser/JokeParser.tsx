@@ -26,23 +26,12 @@ interface JokeProps {
 }
 
 const Joke = ({ joke }: JokeProps) => {
-  const { smoker, headline, image, pubDate, anchor } = joke.fields;
-
-  const twitterImage = "pic.twitter.com/WQqBBlzIn8";
+  const { smoker, headline, image, pubDate, anchor, twitterImage } =
+    joke.fields;
 
   const dateArray = new Date(pubDate).toDateString().split(" ");
   const [weekday, month, day, year] = dateArray;
 
-  const titleDate = `${weekday} • ${month} ${day}, ${year}`;
-
-  console.log({
-    pubDate,
-    headline,
-    dateArray,
-    month,
-    day,
-    titleDate,
-  });
   const anchorString = anchor || "00000";
 
   const hrefString = tweetEncoder(headline, anchorString, twitterImage);
@@ -83,7 +72,7 @@ const Joke = ({ joke }: JokeProps) => {
               </Link>
             </div>
             <div
-              title={titleDate}
+              title={`${weekday} • ${month} ${day}, ${year}`}
               className="mb-3 lg:mb-7 mr-2 object-right w-24 text-right hover:text-black"
             >
               {month} {day}

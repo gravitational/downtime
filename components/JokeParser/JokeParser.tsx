@@ -33,12 +33,15 @@ const Joke = ({ joke }: JokeProps) => {
   const dateArray = new Date(pubDate).toDateString().split(" ");
   const [weekday, month, day, year] = dateArray;
 
-  const titleDate = `${weekday} • ${month} ${day}, ${year}`
+  const titleDate = `${weekday} • ${month} ${day}, ${year}`;
 
-  console.log(headline);
-  console.log({ dateArray });
-  console.log({ month });
-  console.log({ day });
+  console.log({
+    headline,
+    dateArray,
+    month,
+    day,
+    titleDate,
+  });
   const anchorString = anchor || "00000";
 
   const hrefString = tweetEncoder(headline, anchorString, twitterImage);

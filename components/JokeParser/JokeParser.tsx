@@ -36,6 +36,7 @@ const Joke = ({ joke }: JokeProps) => {
   const titleDate = `${weekday} • ${month} ${day}, ${year}`;
 
   console.log({
+    pubDate,
     headline,
     dateArray,
     month,

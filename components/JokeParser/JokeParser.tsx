@@ -6,14 +6,16 @@ export interface JokeParserProps {
   jokes: RawJoke[];
 }
 
-const JokeParser = ({jokes}: JokeParserProps) => {
+const JokeParser = ({ jokes }: JokeParserProps) => {
   return (
     <div className="flex justify-center w-full">
       <div
         id="centralizer"
         className="flex flex-col items-center max-w-[1240px]"
       >
-        {jokes.map(joke => <Joke joke={joke} key={joke.sys.id}/>)}
+        {jokes.map((joke) => (
+          <Joke joke={joke} key={joke.sys.id} />
+        ))}
       </div>
     </div>
   );
@@ -26,22 +28,20 @@ interface JokeProps {
 const Joke = ({ joke }: JokeProps) => {
   const { smoker, headline, image, pubDate, anchor } = joke.fields;
 
-  const twitterImage = "pic.twitter.com/WQqBBlzIn8"
+  const twitterImage = "pic.twitter.com/WQqBBlzIn8";
 
   const dateArray = new Date(pubDate).toDateString().split(" ");
   const [weekday, month, day, year] = dateArray;
 
-  console.log(headline)
-  console.log({dateArray})
-  console.log({month})
-  console.log({day})
+  const titleDate = `${weekday} • ${month} ${day}, ${year}`
+
+  console.log(headline);
+  console.log({ dateArray });
+  console.log({ month });
+  console.log({ day });
   const anchorString = anchor || "00000";
 
-  const hrefString = tweetEncoder(
-    headline,
-    anchorString,
-    twitterImage
-  );
+  const hrefString = tweetEncoder(headline, anchorString, twitterImage);
 
   return (
     <>
@@ -79,7 +79,7 @@ const Joke = ({ joke }: JokeProps) => {
               </Link>
             </div>
             <div
-              title={`${weekday} • ${month} ${day}, ${year}`}
+              title={titleDate}
               className="mb-3 lg:mb-7 mr-2 object-right w-24 text-right hover:text-black"
             >
               {month} {day}

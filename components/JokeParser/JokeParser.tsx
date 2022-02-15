@@ -31,6 +31,10 @@ const Joke = ({ joke }: JokeProps) => {
   const dateArray = new Date(pubDate).toDateString().split(" ");
   const [weekday, month, day, year] = dateArray;
 
+  console.log(headline)
+  console.log({dateArray})
+  console.log({month})
+  console.log({day})
   const anchorString = anchor || "00000";
 
   const hrefString = tweetEncoder(

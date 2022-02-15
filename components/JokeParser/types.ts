@@ -10,7 +10,7 @@ interface Fields {
   headline: string;
   image: Image;
   twitterImage: string;
-  date: string;
+  pubDate: string;
   twitterHtmlEmbedFull: string;
   smoker: string;
   anchor: string;

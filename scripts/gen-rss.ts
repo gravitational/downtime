@@ -17,7 +17,7 @@ export async function generateFeed(jokes: RawJoke[]) {
         : headline.fields.headline,
       description: `${feed.site_url}${headline.fields.image.fields.file.url}`,
       url: `${feed.site_url}/#${headline.fields.anchor}`,
-      date: headline.fields.date,
+      date: headline.fields.pubDate,
     });
   });
 

@@ -26,7 +26,7 @@ export async function getStaticProps() {
 
   const res = await contentfulClient.getEntries({
     content_type: "joke",
-    order: "-fields.date",
+    order: "-fields.pubDate",
   });
 
   await generateFeed(res.items as RawJoke[]);

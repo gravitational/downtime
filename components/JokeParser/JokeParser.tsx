@@ -24,11 +24,11 @@ interface JokeProps {
 }
 
 const Joke = ({ joke }: JokeProps) => {
-  const { smoker, headline, image, date, anchor } = joke.fields;
+  const { smoker, headline, image, pubDate, anchor } = joke.fields;
 
   const twitterImage = "pic.twitter.com/WQqBBlzIn8"
 
-  const dateArray = new Date(date).toDateString().split(" ");
+  const dateArray = new Date(pubDate).toDateString().split(" ");
   const [weekday, month, day, year] = dateArray;
 
   const anchorString = anchor || "00000";

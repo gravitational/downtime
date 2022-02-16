@@ -277,6 +277,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 1, 15),
     anchor: 10033,
   },
+  {
+    headline:
+      "Charging Cable Lost",
+    image: "/assets/images/chargingCable@2x.jpg",
+    twitterImage: "pic.twitter.com/aIpUleyI5K",
+    pubDate: new Date(2022, 1, 16),
+    anchor: 10034,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

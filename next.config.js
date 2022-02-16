@@ -1,7 +1,7 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ["www.istockphoto.com"]
+    domains: ["www.istockphoto.com", "images.ctfassets.net"]
   },
   webpack: (config) => {
     config.module.rules.push({

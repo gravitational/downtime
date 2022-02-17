@@ -285,6 +285,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 1, 16),
     anchor: 10034,
   },
+  {
+    headline:
+      "Kind-Hearted User Not Gonna Report This Bug",
+    image: "/assets/images/safari@2x.png",
+    twitterImage: "pic.twitter.com/aawMAqCWAE",
+    pubDate: new Date(2022, 1, 17),
+    anchor: 10035,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

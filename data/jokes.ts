@@ -293,6 +293,15 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 1, 17),
     anchor: 10035,
   },
+  {
+    smoker: "Study:",
+    headline:
+      "89% Of Billionaires Made Fortune By Opening Link From Unknown Sender",
+    image: "/assets/images/billionaires@2x.png",
+    twitterImage: "pic.twitter.com/TlYmU7TQU3",
+    pubDate: new Date(2022, 1, 18),
+    anchor: 10036,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

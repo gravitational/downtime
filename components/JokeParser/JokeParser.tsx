@@ -26,15 +26,21 @@ interface JokeProps {
 }
 
 const Joke = ({ joke }: JokeProps) => {
-  const { smoker, headline, image, pubDate, anchor, twitterImage } =
-    joke.fields;
+  const {
+    smoker,
+    headline,
+    image,
+    pubDate,
+    anchor,
+    twitterHtmlEmbedFull,
+  } = joke.fields;
 
   const dateArray = new Date(pubDate).toDateString().split(" ");
   const [weekday, month, day, year] = dateArray;
 
   const anchorString = anchor || "00000";
 
-  const hrefString = tweetEncoder(headline, anchorString, twitterImage);
+  const hrefString = tweetEncoder(headline, anchorString, twitterHtmlEmbedFull);
 
   return (
     <>

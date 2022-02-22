@@ -18,7 +18,6 @@ export interface HeadlineProps {
 }
 
 //IMPORTANT: the MONTH is zero-indexed, e.g. "0" = January, "11" = December
-
 const RawJokes: HeadlineProps[] = [
   {
     headline: "Additional Monitor To Make Everything Better",

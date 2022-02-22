@@ -76,7 +76,7 @@ Create an issue for image suggestions and website changes. A priority tag (`P1`,
   },
 ```
 
-4. Open Twitter. Create a tweet and add the joke's image as "media" to your Twitter post. Publish tweet.
+4. Open Twitter. Create a tweet and add the joke's image as "media" to your Twitter post. Publish tweet. **This tweet must not be deleted as it provides the source image used when sharing the tweet on Twitter.**
 
 5. Open the kebab menu on your published Twitter post; select "Embed Tweet"; select "copy code".
 
@@ -105,7 +105,7 @@ Replace the existing value for `twitterImage` in `data/jokes.ts` with the Twitte
 
 8. Create a pull request with these changes and follow pull request process below.
 
-9. Delete any tweets created during the development process.
+9. Delete any extra tweets created during the development process. The tweet used for embedding the image must NOT be deleted.
 ## Overview of general contributions
 
 1. Checkout `main` and pull the latest version

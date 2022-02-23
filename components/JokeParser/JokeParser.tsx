@@ -26,7 +26,7 @@ interface JokeProps {
 }
 
 const Joke = ({ joke }: JokeProps) => {
-  const { smoker, headline, image, pubDate, anchor, twitterImage } =
+  const { smoker, headline, image, pubDate, anchor, twitterEmbeddedCode } =
     joke.fields;
 
   const dateArray = new Date(pubDate).toDateString().split(" ");
@@ -34,7 +34,7 @@ const Joke = ({ joke }: JokeProps) => {
 
   const anchorString = anchor || "00000";
 
-  const hrefString = tweetEncoder(headline, anchorString, twitterImage);
+  const hrefString = tweetEncoder(headline, anchorString, twitterEmbeddedCode);
 
   return (
     <>

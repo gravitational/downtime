@@ -9,9 +9,8 @@ export interface RawJoke {
 interface Fields {
   headline: string;
   image: Image;
-  twitterImage: string;
   pubDate: string;
-  twitterHtmlEmbedFull: string;
+  twitterEmbeddedCode: string;
   smoker: string;
   anchor: string;
 }

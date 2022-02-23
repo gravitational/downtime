@@ -27,13 +27,10 @@ export const getStaticPaths = async () => {
 };
 
 export async function getStaticProps(context: { params: { slug: any } }) {
-  // console.log("hit slug getstaticprops")
   const res = await contentfulClient.getEntries({
     content_type: "joke",
     "fields.slug": context.params.slug,
   });
-
-  // console.log("res:", res.items[0] )
 
   return {
     props: { joke: res.items[0] },

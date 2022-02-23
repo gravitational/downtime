@@ -311,6 +311,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 1, 22),
     anchor: 10037,
   },
+  {
+    headline:
+      "Cohesive, Grammatically Correct Email From Boss Must Be Phishing Scam",
+    image: "/assets/images/bossEmail@2x.png",
+    twitterImage: "pic.twitter.com/SLzccyQR3a",
+    pubDate: new Date(2022, 1, 23),
+    anchor: 10038,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

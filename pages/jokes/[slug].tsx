@@ -34,6 +34,7 @@ export async function getStaticProps(context: { params: { slug: any } }) {
 
   return {
     props: { joke: res.items[0] },
+    revalidate: 1,
   };
 }
 

@@ -32,6 +32,7 @@ export async function getStaticProps() {
   return {
     props: {
       jokes: res.items,
+      revalidate: 1,
     },
   };
 }

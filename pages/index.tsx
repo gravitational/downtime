@@ -29,7 +29,7 @@ export async function getStaticProps() {
 
   console.log("res:", res.items)
 
-  // await generateFeed(res.items as RawJoke[]);
+  await generateFeed(res.items as RawJoke[]);
 
   return {
     props: {

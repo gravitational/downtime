@@ -13,9 +13,19 @@ const JokeParser = ({ jokes }: JokeParserProps) => {
         id="centralizer"
         className="flex flex-col items-center max-w-[1240px]"
       >
-        {jokes.map((joke) => (
-          <Joke joke={joke} key={joke.sys.id} />
-        ))}
+        <ul>
+          {jokes.map((joke) => {
+            return (
+              <li key={joke.sys.id}>
+                <Link href={`/jokes/${joke.fields.slug}`}>
+                  <a>
+                    {joke.fields.smoker} {joke.fields.headline}
+                  </a>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </div>
   );
@@ -25,7 +35,7 @@ interface JokeProps {
   joke: RawJoke;
 }
 
-const Joke = ({ joke }: JokeProps) => {
+export const Joke = ({ joke }: JokeProps) => {
   const { smoker, headline, image, pubDate, anchor, twitterEmbeddedCode } =
     joke.fields;
 

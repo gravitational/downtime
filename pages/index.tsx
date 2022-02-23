@@ -1,8 +1,8 @@
 import { JokeParser, RawJoke } from "components/JokeParser";
-import NextImage from "next/image";
-import logo from "../public/assets/images/downtimeLogo.png";
+import Logo from "components/Logo";
 import { createClient } from "contentful";
 import { generateFeed } from "../scripts/gen-rss";
+
 export interface HomeProps {
   jokes: RawJoke[];
 }
@@ -10,9 +10,7 @@ export interface HomeProps {
 export default function Home({ jokes }: HomeProps) {
   return (
     <div className="flex flex-col items-center w-full">
-      <div className="w-6/12 max-w-[600px] mt-14 lg:mt-16">
-        <NextImage src={logo} alt="downtime logo" />
-      </div>
+      <Logo />
       <JokeParser jokes={jokes} />
     </div>
   );

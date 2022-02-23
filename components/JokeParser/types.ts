@@ -13,6 +13,7 @@ interface Fields {
   twitterEmbeddedCode: string;
   smoker: string;
   anchor: string;
+  slug: string;
 }
 
 //image

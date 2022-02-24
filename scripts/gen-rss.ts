@@ -16,7 +16,7 @@ export async function generateFeed(jokes: RawJoke[]) {
         ? `${headline.fields.smoker} ${headline.fields.headline}`
         : headline.fields.headline,
       description: `${feed.site_url}${headline.fields.image.fields.file.url}`,
-      url: `${feed.site_url}/#${headline.fields.anchor}`,
+      url: `${feed.site_url}/jokes/${headline.fields.slug}`,
       date: headline.fields.pubDate,
     });
   });

@@ -319,6 +319,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 1, 23),
     anchor: 10038,
   },
+  {
+    headline:
+      "Once “Weak” Password Triumphantly Emerges From Metamorphosis As “Medium” Password",
+    image: "/assets/images/passwordStrength@2x.png",
+    twitterImage: "pic.twitter.com/dzyMcQIQ25",
+    pubDate: new Date(2022, 1, 24),
+    anchor: 10039,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

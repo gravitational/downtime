@@ -321,7 +321,7 @@ const RawJokes: HeadlineProps[] = [
   },
   {
     headline:
-      "Once “Weak” Password Triumphantly Emerges From Metamorphosis As “Medium” Password",
+      "Once “Weak” Password Triumphantly Emerges From Metamorphosis As “Strong” Password",
     image: "/assets/images/passwordStrength@2x.png",
     twitterImage: "pic.twitter.com/dzyMcQIQ25",
     pubDate: new Date(2022, 1, 24),

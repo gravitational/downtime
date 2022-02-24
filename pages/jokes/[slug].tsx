@@ -1,5 +1,5 @@
 import { createClient } from "contentful";
-import { Joke, RawJoke } from "components/JokeParser";
+import { Joke, JokeParser, RawJoke } from "components/JokeParser";
 import Logo from "components/Logo";
 
 const contentfulClient = createClient({
@@ -7,16 +7,25 @@ const contentfulClient = createClient({
   space: `${process.env.CONTENTFUL_SPACE_ID}`,
 });
 interface JokePageProps {
-  joke: RawJoke;
+  currentJoke: RawJoke;
+  remainderJokes: RawJoke[];
 }
 
-const JokePage = ({ joke }: JokePageProps) => {
+const JokePage = ({ currentJoke, remainderJokes }: JokePageProps) => {
   return (
     <div className="flex flex-col items-center w-full">
       <Logo />
       <div className="flex justify-center w-full">
-        <Joke joke={joke} />
+        <Joke joke={currentJoke} isIndividualJoke />
       </div>
+      {remainderJokes && (
+        <>
+          <div>See more...</div>
+          <div className="flex justify-center w-full">
+            <JokeParser jokes={remainderJokes} />
+          </div>
+        </>
+      )}
     </div>
   );
 };
@@ -43,11 +52,25 @@ export const getStaticPaths = async () => {
 export async function getStaticProps(context: { params: { slug: any } }) {
   const res = await contentfulClient.getEntries({
     content_type: "joke",
-    "fields.slug": context.params.slug,
+    order: "-fields.pubDate",
+  });
+
+  let currentJoke;
+
+  const remainderJokes: RawJoke[] = [];
+
+  const allJokes = res.items as RawJoke[];
+
+  allJokes.forEach((item: RawJoke) => {
+    if (item.fields.slug === context.params.slug) {
+      currentJoke = item;
+    } else {
+      remainderJokes.push(item);
+    }
   });
 
   return {
-    props: { joke: res.items[0] },
+    props: { currentJoke: currentJoke, remainderJokes: remainderJokes },
   };
 }
 

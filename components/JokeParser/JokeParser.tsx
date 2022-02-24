@@ -14,7 +14,7 @@ const JokeParser = ({ jokes }: JokeParserProps) => {
         className="flex flex-col items-center max-w-[1240px]"
       >
         {jokes.map((joke) => (
-          <Joke joke={joke} key={joke.sys.id} isHomePage />
+          <Joke joke={joke} key={joke.sys.id} />
         ))}
       </div>
     </div>
@@ -23,14 +23,12 @@ const JokeParser = ({ jokes }: JokeParserProps) => {
 
 interface JokeProps {
   joke: RawJoke;
-  isHomePage?: boolean;
-  isIndividualPage?: boolean;
+  isIndividualJoke?: boolean;
 }
 
 export const Joke = ({
   joke,
-  isHomePage = false,
-  isIndividualPage = false,
+  isIndividualJoke = false,
 }: JokeProps) => {
   const {
     smoker,
@@ -59,7 +57,13 @@ export const Joke = ({
         id="card"
         className="flex flex-col items-center mb-10 mx-3 lg:mx-7 px-3 md:px-7 max-w-[660px] shadow-card "
       >
-        {isHomePage ? (
+        {isIndividualJoke ? (
+          <div className="text-xl lg:text-3xl leading-6 mt-3 md:mt-5 lg:mt-8 mb-3 md:mb-5 w-full ">
+            <span className="font-bold">
+              {smoker} {headline}
+            </span>
+          </div>
+        ) : (
           <Link href={`/jokes/${slug}`}>
             <a className="text-xl lg:text-3xl leading-6 mt-3 md:mt-5 lg:mt-8 mb-3 md:mb-5 w-full ">
               <span className="font-bold">
@@ -67,12 +71,6 @@ export const Joke = ({
               </span>
             </a>
           </Link>
-        ) : (
-          <div className="text-xl lg:text-3xl leading-6 mt-3 md:mt-5 lg:mt-8 mb-3 md:mb-5 w-full ">
-            <span className="font-bold">
-              {smoker} {headline}
-            </span>
-          </div>
         )}
         {image && (
           <div className="w-full mb-2 lg:mb-5 ">

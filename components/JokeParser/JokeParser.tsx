@@ -13,19 +13,9 @@ const JokeParser = ({ jokes }: JokeParserProps) => {
         id="centralizer"
         className="flex flex-col items-center max-w-[1240px]"
       >
-        <ul>
-          {jokes.map((joke) => {
-            return (
-              <li key={joke.sys.id}>
-                <Link href={`/jokes/${joke.fields.slug}`}>
-                  <a>
-                    {joke.fields.smoker} {joke.fields.headline}
-                  </a>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        {jokes.map((joke) => (
+          <Joke joke={joke} key={joke.sys.id} isHomePage />
+        ))}
       </div>
     </div>
   );
@@ -33,18 +23,31 @@ const JokeParser = ({ jokes }: JokeParserProps) => {
 
 interface JokeProps {
   joke: RawJoke;
+  isHomePage?: boolean;
+  isIndividualPage?: boolean;
 }
 
-export const Joke = ({ joke }: JokeProps) => {
-  const { smoker, headline, image, pubDate, anchor, twitterEmbeddedCode } =
-    joke.fields;
+export const Joke = ({
+  joke,
+  isHomePage = false,
+  isIndividualPage = false,
+}: JokeProps) => {
+  const {
+    smoker,
+    headline,
+    image,
+    pubDate,
+    anchor,
+    twitterEmbeddedCode,
+    slug,
+  } = joke.fields;
 
   const dateArray = new Date(pubDate).toDateString().split(" ");
   const [weekday, month, day, year] = dateArray;
 
   const anchorString = anchor || "00000";
 
-  const hrefString = tweetEncoder(headline, anchorString, twitterEmbeddedCode);
+  const hrefString = tweetEncoder(headline, slug, twitterEmbeddedCode);
 
   return (
     <>
@@ -56,11 +59,21 @@ export const Joke = ({ joke }: JokeProps) => {
         id="card"
         className="flex flex-col items-center mb-10 mx-3 lg:mx-7 px-3 md:px-7 max-w-[660px] shadow-card "
       >
-        <div className="text-xl lg:text-3xl leading-6 mt-3 md:mt-5 lg:mt-8 mb-3 md:mb-5 w-full ">
-          <span className="font-bold">
-            {smoker} {headline}
-          </span>
-        </div>
+        {isHomePage ? (
+          <Link href={`/jokes/${slug}`}>
+            <a className="text-xl lg:text-3xl leading-6 mt-3 md:mt-5 lg:mt-8 mb-3 md:mb-5 w-full ">
+              <span className="font-bold">
+                {smoker} {headline}
+              </span>
+            </a>
+          </Link>
+        ) : (
+          <div className="text-xl lg:text-3xl leading-6 mt-3 md:mt-5 lg:mt-8 mb-3 md:mb-5 w-full ">
+            <span className="font-bold">
+              {smoker} {headline}
+            </span>
+          </div>
+        )}
         {image && (
           <div className="w-full mb-2 lg:mb-5 ">
             <NextImage

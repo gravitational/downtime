@@ -16,7 +16,6 @@ export default function Home({ jokes }: HomeProps) {
 }
 
 export async function getStaticProps() {
-  console.log("hit index getstaticprops")
   const contentfulClient = createClient({
     accessToken: `${process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN}`,
     space: `${process.env.CONTENTFUL_SPACE_ID}`,
@@ -27,14 +26,11 @@ export async function getStaticProps() {
     order: "-fields.pubDate",
   });
 
-  console.log("res:", res.items)
-
   await generateFeed(res.items as RawJoke[]);
 
   return {
     props: {
       jokes: res.items,
     },
-    revalidate: 1,
   };
 }

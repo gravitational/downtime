@@ -33,5 +33,6 @@ yarn-error.log*
 # vercel
 .vercel
 
+public/feed.xml
 scripts/gen-rss.js
 data/jokes.js

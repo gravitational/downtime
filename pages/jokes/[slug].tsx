@@ -6,6 +6,20 @@ const contentfulClient = createClient({
   accessToken: `${process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN}`,
   space: `${process.env.CONTENTFUL_SPACE_ID}`,
 });
+interface JokePageProps {
+  joke: RawJoke;
+}
+
+const JokePage = ({ joke }: JokePageProps) => {
+  return (
+    <div className="flex flex-col items-center w-full">
+      <Logo />
+      <div className="flex justify-center w-full">
+        <Joke joke={joke} />
+      </div>
+    </div>
+  );
+};
 
 export const getStaticPaths = async () => {
   const res = await contentfulClient.getEntries({
@@ -34,23 +48,7 @@ export async function getStaticProps(context: { params: { slug: any } }) {
 
   return {
     props: { joke: res.items[0] },
-    revalidate: 1,
   };
 }
-
-interface JokePageProps {
-  joke: RawJoke;
-}
-
-const JokePage = ({ joke }: JokePageProps) => {
-  return (
-    <div className="flex flex-col items-center w-full">
-      <Logo />
-      <div className="flex justify-center w-full">
-        <Joke joke={joke} />
-      </div>
-    </div>
-  );
-};
 
 export default JokePage;

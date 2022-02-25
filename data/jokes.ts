@@ -78,7 +78,7 @@ const RawJokes: HeadlineProps[] = [
     headline:
       "Don’t Stare, But Kelsey Hightower Just Walked Into This Barnes & Noble",
     image: "/assets/images/barnesAndNobleClackamas@2x.jpeg",
-    twitterImage: "pic.twitter.com/TCAe11Cto7",
+    twitterImage: "pic.twitter.com/4gOslvVhmU",
     pubDate: new Date(2022, 0, 1),
     anchor: 10007,
   },
@@ -105,14 +105,6 @@ const RawJokes: HeadlineProps[] = [
     twitterImage: "pic.twitter.com/OB7MKCV0H5",
     pubDate: new Date(2022, 0, 4),
     anchor: 10017,
-  },
-  {
-    headline:
-      "Poll Finds Knowledge of Semantic Versioning Remains #1 Quality Americans Seeking In Romantic Partner",
-    image: "/assets/images/romance@2x.jpg",
-    twitterImage: "pic.twitter.com/2jrdX9AHnV",
-    pubDate: new Date(2022, 0, 5),
-    anchor: 10010,
   },
   {
     headline:
@@ -194,14 +186,14 @@ const RawJokes: HeadlineProps[] = [
   {
     headline: "Bot’s Mother Sad It No Longer Spams Her As Much As It Used To",
     image: "/assets/images/botDoesntSpam@2x.png",
-    twitterImage: "pic.twitter.com/wVNpVKx6bP",
+    twitterImage: "pic.twitter.com/QysBOqbu1B",
     pubDate: new Date(2022, 0, 28),
     anchor: 10023,
   },
   {
     headline: "Universe To Be Down Thursday While God Runs Software Update",
     image: "/assets/images/universeDown@2x.jpg",
-    twitterImage: "pic.twitter.com/EVA3DP0eJz",
+    twitterImage: "pic.twitter.com/uqrjoCcEPx",
     pubDate: new Date(2022, 0, 31),
     anchor: 10024,
   },
@@ -209,9 +201,139 @@ const RawJokes: HeadlineProps[] = [
     headline:
       "HR Department Gives SRE Humiliating New Title Of ‘Uptime Success Manager’",
     image: "/assets/images/uptimeSuccessManager@2x.jpg",
-    twitterImage: "pic.twitter.com/PSCqAr860N",
+    twitterImage: "pic.twitter.com/V03celmsID",
     pubDate: new Date(2022, 1, 1),
     anchor: 10025,
+  },
+  {
+    headline:
+      "DevOps Engineer Chatting With Verizon Customer Service Can’t Wait For Epic Reveal He’s Actually Quite Familiar With TCP/IP Settings",
+    image: "/assets/images/TCP-IP-settings@2x.jpg",
+    twitterImage: "pic.twitter.com/1BtHiC4sX1",
+    pubDate: new Date(2022, 1, 2),
+    anchor: 10026,
+  },
+  {
+    smoker: "Breaking:",
+    headline: "Manager Just Needs Quick 5-6 Hours Of Your Time",
+    image: "/assets/images/managerChat@2x.jpg",
+    twitterImage: "pic.twitter.com/9YCQ2LwnU1",
+    pubDate: new Date(2022, 1, 3),
+    anchor: 10027,
+  },
+  {
+    headline:
+      "Precocious Bot Getting Pretty Good At Telling Difference Between CAPTCHA Bridges, Cars",
+    image: "/assets/images/bridges@2x.png",
+    twitterImage: "pic.twitter.com/DaM225rhMS",
+    pubDate: new Date(2022, 1, 7),
+    anchor: 10028,
+  },
+  {
+    headline:
+      "SRE Sits Child Down To Have 'Birds, Bees and Cap Theorem' Talk",
+    image: "/assets/images/birdsBeesCapTalk@2x.jpg",
+    twitterImage: "pic.twitter.com/vRzZIAQxAn",
+    pubDate: new Date(2022, 1, 8),
+    anchor: 10029,
+  },
+  {
+    headline:
+      "OSS Maintainer Who Just Read Marie Kondo Excited To Delete All Issues That Don’t Spark Total Joy",
+    image: "/assets/images/marieKondo@2x.png",
+    twitterImage: "pic.twitter.com/wyeJ9t3jN3",
+    pubDate: new Date(2022, 1, 9),
+    anchor: 10030,
+  },
+  {
+    headline:
+      "CEO Assuming Someone In Company Taking Care Of All That Cybersecurity Stuff",
+    image: "/assets/images/unsatisfiedCEO@2x.jpg",
+    twitterImage: "pic.twitter.com/zS26sx7yas",
+    pubDate: new Date(2022, 1, 10),
+    anchor: 10031,
+  },
+  {
+    headline:
+      "App User Whose Bank Account Not Yet Emptied Disappointed To Learn New Software Update Just Fixed Log4j Bugs",
+    image: "/assets/images/womanDisappointed@2x.jpg",
+    twitterImage: "pic.twitter.com/tXlfP57Kps",
+    pubDate: new Date(2022, 1, 11),
+    anchor: 10032,
+  },
+  {
+    headline:
+      "Poll Finds Knowledge of Semantic Versioning Remains #1 Quality Americans Seeking In Romantic Partner",
+    image: "/assets/images/romance@2x.jpg",
+    twitterImage: "pic.twitter.com/2jrdX9AHnV",
+    pubDate: new Date(2022, 1, 14),
+    anchor: 10010,
+  },
+  {
+    headline:
+      "Nation Encouraged To Make Second Password",
+    image: "/assets/images/crowd@2x.jpg",
+    twitterImage: "pic.twitter.com/syosIcIgac",
+    pubDate: new Date(2022, 1, 15),
+    anchor: 10033,
+  },
+  {
+    headline:
+      "Charging Cable Lost",
+    image: "/assets/images/chargingCable@2x.jpg",
+    twitterImage: "pic.twitter.com/QpzNb9Pq3E",
+    pubDate: new Date(2022, 1, 16),
+    anchor: 10034,
+  },
+  {
+    headline:
+      "Kind-Hearted User Not Gonna Report This Bug",
+    image: "/assets/images/safari@2x.png",
+    twitterImage: "pic.twitter.com/hKNN9neJOi",
+    pubDate: new Date(2022, 1, 17),
+    anchor: 10035,
+  },
+  {
+    smoker: "Study:",
+    headline:
+      "89% Of Billionaires Made Fortune By Opening Link From Unknown Sender",
+    image: "/assets/images/billionaires@2x.png",
+    twitterImage: "pic.twitter.com/TVNmpHUiPW",
+    pubDate: new Date(2022, 1, 18),
+    anchor: 10036,
+  },
+  {
+    smoker: "Breaking:",
+    headline:
+      "Bug Fixed",
+    image: "/assets/images/bugFixed@2x.png",
+    twitterImage: "pic.twitter.com/JBxqwcxQCm",
+    pubDate: new Date(2022, 1, 22),
+    anchor: 10037,
+  },
+  {
+    headline:
+      "Cohesive, Grammatically Correct Email From Boss Must Be Phishing Scam",
+    image: "/assets/images/bossEmail@2x.png",
+    twitterImage: "pic.twitter.com/SLzccyQR3a",
+    pubDate: new Date(2022, 1, 23),
+    anchor: 10038,
+  },
+  {
+    headline:
+      "Once “Weak” Password Triumphantly Emerges From Metamorphosis As “Strong” Password",
+    image: "/assets/images/passwordStrength@2x.png",
+    twitterImage: "pic.twitter.com/dzyMcQIQ25",
+    pubDate: new Date(2022, 1, 24),
+    anchor: 10039,
+  },
+  {
+    headline:
+      "“React Native Is Totally The Way To Go,” Confirms Team Quietly Rewriting Entire App In Native",
+    image: "/assets/images/reactNative@2x.jpg",
+    twitterImage: "pic.twitter.com/ICKPeBCcSN",
+    pubDate: new Date(2022, 1, 25),
+    anchor: 10040,
   },
 ];
 

@@ -29,4 +29,3 @@ const LittleStack = () => (
     <div className={styles.innerStack}/>
   </div>
 );
-

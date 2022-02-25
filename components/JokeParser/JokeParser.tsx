@@ -71,6 +71,7 @@ const Joke = ({ joke }: JokeProps) => {
                 </a>
               </Link>
             </div>
+
             <div title={`${weekday} • ${month} ${day}, ${year}`} className={styles.date}>
               {month} {day}
             </div>

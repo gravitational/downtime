@@ -1,1 +1,1 @@
-export { default } from "./GDPR"
+export { default } from "./GDPR";

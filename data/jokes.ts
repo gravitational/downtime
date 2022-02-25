@@ -327,6 +327,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 1, 24),
     anchor: 10039,
   },
+  {
+    headline:
+      "“React Native Is Totally The Way To Go,” Confirms Team Quietly Rewriting Entire App In Native",
+    image: "/assets/images/reactNative@2x.jpg",
+    twitterImage: "pic.twitter.com/ICKPeBCcSN",
+    pubDate: new Date(2022, 1, 25),
+    anchor: 10040,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

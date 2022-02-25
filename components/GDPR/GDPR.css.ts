@@ -21,6 +21,10 @@ export const bannerContainer = style({
   },
 });
 
+export const hideBanner = style({
+  visibility: "hidden",
+});
+
 export const banner = style({
   display: "flex",
   justifyContent: "center",

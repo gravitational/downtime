@@ -8,7 +8,7 @@ const GDPR = () => {
   const handleClick = (): void => {
     //hide banner when clicked
     if (gdprBanner.current !== null) {
-      gdprBanner.current.classList.add("hidden");
+      gdprBanner.current.classList.add(styles.hideBanner);
     }
 
     //sets gdpr cookie when clicked

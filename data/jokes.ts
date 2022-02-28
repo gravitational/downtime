@@ -335,6 +335,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 1, 25),
     anchor: 10040,
   },
+  {
+    headline:
+      "Zero-Knowledge Proof Used To Confirm Man Doesn’t Understand Zero-Knowledge Proofs",
+    image: "/assets/images/manQuestioning@2x.jpg",
+    twitterImage: "pic.twitter.com/sL9VmA0wU7",
+    pubDate: new Date(2022, 1, 28),
+    anchor: 10041,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

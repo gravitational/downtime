@@ -343,6 +343,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 1, 28),
     anchor: 10041,
   },
+  {
+    headline:
+      "Man Hoping To Visit Each Of Company’s Slack Channels Before He Dies",
+    image: "/assets/images/manCelebratesAtComputer.jpg",
+    twitterImage: "pic.twitter.com/vJdxSwoPVR",
+    pubDate: new Date(2022, 2, 1),
+    anchor: 10042,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

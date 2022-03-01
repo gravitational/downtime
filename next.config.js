@@ -1,14 +1,7 @@
-module.exports = {
-  reactStrictMode: true,
-  images: {
-    domains: ["www.istockphoto.com"]
-  },
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.svg$/,
-      exclude: [/node_modules/],
-      use: ["@svgr/webpack"],
-    });
-    return config;
-  }
-};
+const { createVanillaExtractPlugin } = require("@vanilla-extract/next-plugin");
+const withVanillaExtract = createVanillaExtractPlugin();
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+
+module.exports = withVanillaExtract(nextConfig);

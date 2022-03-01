@@ -1,18 +1,20 @@
 import React from "react";
 import Link from "next/link";
+import * as styles from "./NavBar.css"
 
 const NavBar = () => {
   return (
-    <nav className="flex justify-end w-full h-12 fixed top-0 bg-black z-50">
-      <div className="flex justify-center w-2/4 align-center">
+    <nav className={styles.nav}>
+      <div className={styles.bar}>
         <LittleStack />
         <Link href="/">
-          <a className="text-xl flex flex-col justify-center text-devGreen font-bold ml-2">
+          <a className={styles.a}>
             downtime.dev
           </a>
         </Link>
       </div>
-      <div className="flex justify-center w-2/4"></div>
+      <div className={styles.bar}>
+      </div>
     </nav>
   );
 };
@@ -20,10 +22,10 @@ const NavBar = () => {
 export default NavBar;
 
 const LittleStack = () => (
-  <div className="flex w-4 flex-col justify-center">
-    <div className="w-full h-1 bg-devGreen border-t border-black"></div>
-    <div className="w-full h-1 bg-devGreen border-t border-black"></div>
-    <div className="w-full h-1 bg-devGreen border-t border-black"></div>
-    <div className="w-full h-1 bg-devGreen border-t border-black"></div>
+  <div className={styles.outerStack}>
+    <div className={styles.innerStack}/>
+    <div className={styles.innerStack}/>
+    <div className={styles.innerStack}/>
+    <div className={styles.innerStack}/>
   </div>
 );

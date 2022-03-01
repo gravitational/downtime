@@ -2,15 +2,16 @@ import NextImage from "next/image";
 import Link from "next/link";
 import { HEADLINES, HeadlineProps } from "data/jokes";
 import { tweetEncoder } from "utilities/encoder";
+import * as styles from "./JokeParser.css"
 
 console.log("joke-count:", HEADLINES.length);
 
 const JokeParser = () => {
   return (
-    <div className="flex justify-center w-full">
+    <div className={styles.outer}>
       <div
         id="centralizer"
-        className="flex flex-col items-center max-w-[1240px]"
+        className={styles.inner}
       >
         {HEADLINES.map((joke: HeadlineProps, i) => (
           <Joke joke={joke} key={`${i} + item`} />
@@ -38,20 +39,20 @@ const Joke = ({ joke }: JokeProps) => {
   return (
     <>
       {/* Anchor is set above card so that navbar doesn't cover linked content */}
-      <div className="relative -top-14">
+      <div className={styles.anchorOuter}>
         <a id={anchorString} rel="nofollow"></a>
       </div>
       <div
         id="card"
-        className="flex flex-col items-center mb-10 mx-3 lg:mx-7 px-3 md:px-7 max-w-[660px] shadow-card "
+        className={styles.cardOuter}
       >
-        <div className="text-xl lg:text-3xl leading-6 mt-3 md:mt-5 lg:mt-8 mb-3 md:mb-5 w-full ">
-          <span className="font-bold">
+        <div className={styles.headline}>
+          <span className={styles.span1}>
             {joke.smoker} {joke.headline}
           </span>
         </div>
         {joke.image && (
-          <div className="w-full mb-2 lg:mb-5 ">
+          <div className={styles.imageContainer}>
             <NextImage
               src={joke.image}
               alt="a hilariously apropos image"
@@ -60,20 +61,18 @@ const Joke = ({ joke }: JokeProps) => {
             />
           </div>
         )}
-        <div className="flex flex-col w-full text-gray-500 relative">
-          <div className="flex flex-row w-full justify-between">
-            <div className="mb-3 lg:mb-7 ">
+        <div className={styles.shareOuter}>
+          <div className={styles.shareInner}>
+            <div className={styles.shareString}>
               share this on{" "}
               <Link href={hrefString}>
                 <a target="_blank" rel="noopener noreferrer">
-                  <span className="text-gray-700">twitter</span>
+                  <span className={styles.span2}>twitter</span>
                 </a>
               </Link>
             </div>
-            <div
-              title={`${weekday} • ${month} ${day}, ${year}`}
-              className="mb-3 lg:mb-7 mr-2 object-right w-24 text-right hover:text-black"
-            >
+
+            <div title={`${weekday} • ${month} ${day}, ${year}`} className={styles.date}>
               {month} {day}
             </div>
           </div>

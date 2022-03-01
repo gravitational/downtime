@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { setCookie } from "nookies";
+import * as styles from "./GDPR.css"
 
 const GDPR = () => {
   const gdprBanner = useRef<HTMLDivElement>(null);
@@ -7,7 +8,7 @@ const GDPR = () => {
   const handleClick = (): void => {
     //hide banner when clicked
     if (gdprBanner.current !== null) {
-      gdprBanner.current.classList.add("hidden");
+      gdprBanner.current.classList.add(styles.hideBanner);
     }
 
     //sets gdpr cookie when clicked
@@ -60,14 +61,14 @@ const GDPR = () => {
       {/* GDPR banner only renders if there is no existing gdpr cookie */}
       <div
         ref={gdprBanner}
-        className="fixed bottom-0 bg-black z-50 lg:h-10 w-full text-white font-bold align-center flex flex-col justify-center"
+        className={styles.bannerContainer}
       >
-        <div className="flex justify-center my-2 mx-2 md:mx-5 align-center">
+        <div className={styles.banner}>
           This site uses cookies to improve user experience. By using this site,
           you agree to our use of cookies.
           <button
             onClick={handleClick}
-            className="px-1.5 ml-5 mr-2 md:ml-10 border border-devGreen md:w-[80px] md:h-[28px] md:whitespace-nowrap self-center"
+            className={styles.button}
           >
             OK, boss
           </button>

@@ -1,12 +1,16 @@
-import { RawJoke } from "components/JokeParser";
+import { JokeParser, RawJoke } from "components/JokeParser";
 import Logo from "components/Logo";
 import { createClient } from "contentful";
 import { generateFeed } from "../scripts/gen-rss";
+import { JokeContext } from "./_app";
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center w-full">
       <Logo />
+      <JokeContext.Consumer>
+        {value => <JokeParser jokes={value} />}
+      </JokeContext.Consumer>
     </div>
   );
 }

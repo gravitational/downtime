@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, createContext } from "react";
 import { useRouter } from "next/router";
 import type { AppContext, AppProps } from "next/app";
 import Layout from "components/Layout";
@@ -8,12 +8,13 @@ import { GTAGPageView } from "utilities/google/gtag";
 import { GTMPageView } from "utilities/google/gtm";
 import Script from "next/script";
 import { createClient } from "contentful";
-import App from "next/app";
 import { RawJoke } from "components/JokeParser";
+
 interface CustomAppProps extends AppProps {
   allJokes: RawJoke[];
 }
 
+export const JokeContext = createContext([] as RawJoke[]);
 function MyApp({ Component, pageProps, allJokes }: CustomAppProps) {
   const router = useRouter();
 
@@ -72,17 +73,16 @@ function MyApp({ Component, pageProps, allJokes }: CustomAppProps) {
       />
       {/* Google Analytics End */}
       <Head />
-      <Layout allJokes={allJokes}>
-        <Component {...pageProps} />
+      <Layout>
+        <JokeContext.Provider value={allJokes}>
+          <Component {...pageProps} />
+        </JokeContext.Provider>
       </Layout>
     </>
   );
 }
 
 MyApp.getInitialProps = async (context: AppContext) => {
-  // const pageProps = await App.getInitialProps(context); // Retrieves page's `getInitialProps`
-  // console.log("pageprops", pageProps)
-
   const contentfulClient = createClient({
     accessToken: `${process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN}`,
     space: `${process.env.CONTENTFUL_SPACE_ID}`,
@@ -93,11 +93,7 @@ MyApp.getInitialProps = async (context: AppContext) => {
     order: "-fields.pubDate",
   });
 
-  console.log("appProps", appProps.items)
-
-  //return merger of page's getInitialProps value with _app's getInitialProps value
   return {
-    // ...pageProps,
     allJokes: appProps.items,
   };
 };

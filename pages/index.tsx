@@ -1,16 +1,12 @@
-import { JokeParser, RawJoke } from "components/JokeParser";
+import { RawJoke } from "components/JokeParser";
 import Logo from "components/Logo";
 import { createClient } from "contentful";
 import { generateFeed } from "../scripts/gen-rss";
-export interface HomeProps {
-  jokes: RawJoke[];
-}
 
-export default function Home({ jokes }: HomeProps) {
+export default function Home() {
   return (
     <div className="flex flex-col items-center w-full">
       <Logo />
-      <JokeParser jokes={jokes} />
     </div>
   );
 }
@@ -29,8 +25,6 @@ export async function getStaticProps() {
   await generateFeed(res.items as RawJoke[]);
 
   return {
-    props: {
-      jokes: res.items,
-    },
+    props: {},
   };
 }

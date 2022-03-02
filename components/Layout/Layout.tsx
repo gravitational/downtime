@@ -3,7 +3,6 @@ import NavBar from "components/NavBar/NavBar";
 import GDPR from "components/GDPR";
 interface LayoutProps {
   children: React.ReactNode;
-  // allJokes: RawJoke[];
 }
 
 const Layout = ({ children }: LayoutProps) => {

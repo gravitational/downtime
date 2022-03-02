@@ -9,7 +9,7 @@ import { GTMPageView } from "utilities/google/gtm";
 import Script from "next/script";
 import { createClient } from "contentful";
 import App from "next/app";
-import { JokeParser, RawJoke } from "components/JokeParser";
+import { RawJoke } from "components/JokeParser";
 interface CustomAppProps extends AppProps {
   allJokes: RawJoke[];
 }
@@ -72,9 +72,8 @@ function MyApp({ Component, pageProps, allJokes }: CustomAppProps) {
       />
       {/* Google Analytics End */}
       <Head />
-      <Layout>
+      <Layout allJokes={allJokes}>
         <Component {...pageProps} />
-        <JokeParser jokes={allJokes} />
       </Layout>
     </>
   );

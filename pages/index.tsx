@@ -22,8 +22,10 @@ export async function getStaticProps() {
     order: "-fields.pubDate",
   });
 
+  //getStaticProps is run in order to generate RSS feed with this function call:
   await generateFeed(res.items as RawJoke[]);
 
+  //getStaticProps requires props to be returned - returning an empty object as this component does not need props
   return {
     props: {},
   };

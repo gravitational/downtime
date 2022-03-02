@@ -80,7 +80,8 @@ function MyApp({ Component, pageProps, allJokes }: CustomAppProps) {
 }
 
 MyApp.getInitialProps = async (context: AppContext) => {
-  const pageProps = await App.getInitialProps(context); // Retrieves page's `getInitialProps`
+  // const pageProps = await App.getInitialProps(context); // Retrieves page's `getInitialProps`
+  // console.log("pageprops", pageProps)
 
   const contentfulClient = createClient({
     accessToken: `${process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN}`,
@@ -92,9 +93,11 @@ MyApp.getInitialProps = async (context: AppContext) => {
     order: "-fields.pubDate",
   });
 
+  console.log("appProps", appProps.items)
+
   //return merger of page's getInitialProps value with _app's getInitialProps value
   return {
-    ...pageProps,
+    // ...pageProps,
     allJokes: appProps.items,
   };
 };

@@ -21,34 +21,49 @@ const JokePage = ({ currentJoke }: JokePageProps) => {
   );
 };
 
-export const getStaticPaths = async () => {
+// export const getStaticPaths = async () => {
+//   const res = await contentfulClient.getEntries({
+//     content_type: "joke",
+//   });
+
+//   const jokes = res.items as RawJoke[];
+
+//   const paths = jokes.map((item) => {
+//     return {
+//       params: { slug: item.fields.slug },
+//     };
+//   });
+
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
+
+export async function getInitialProps(context: { query: { slug: any } }) {
   const res = await contentfulClient.getEntries({
     content_type: "joke",
+    "fields.slug": context.query.slug,
   });
 
-  const jokes = res.items as RawJoke[];
-
-  const paths = jokes.map((item) => {
-    return {
-      params: { slug: item.fields.slug },
-    };
-  });
-
-  return {
-    paths,
-    fallback: false,
-  };
-};
-
-export async function getStaticProps(context: { params: { slug: any } }) {
-  const res = await contentfulClient.getEntries({
-    content_type: "joke",
-    "fields.slug": context.params.slug,
-  });
+  console.log("ind page:", res)
 
   return {
     props: { currentJoke: res.items[0] },
   };
 }
+
+// export async function getStaticProps(context: { params: { slug: any } }) {
+//   const res = await contentfulClient.getEntries({
+//     content_type: "joke",
+//     "fields.slug": context.params.slug,
+//   });
+
+//   console.log("ind page:", res)
+
+//   return {
+//     props: { currentJoke: res.items[0] },
+//   };
+// }
 
 export default JokePage;

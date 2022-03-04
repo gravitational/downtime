@@ -1,4 +1,4 @@
-import * as fs from 'fs';
+import { readFileSync, writeFileSync } from "fs";
 import path from "path";
 import { createClient } from "contentful";
 
@@ -24,7 +24,7 @@ export default async function getJokes() {
 
   try {
     cachedData = await JSON.parse(
-      fs.readFileSync(path.join(__dirname, JOKES_CACHE_PATH), "utf8")
+      readFileSync(path.join(__dirname, JOKES_CACHE_PATH), "utf8")
     );
   } catch (error) {
     console.log("Joke cache not initialized");
@@ -34,7 +34,7 @@ export default async function getJokes() {
     const data = await fetchJokesData();
 
     try {
-      await fs.writeFileSync(
+      await writeFileSync(
         path.join(__dirname, JOKES_CACHE_PATH),
         JSON.stringify(data),
         "utf8"

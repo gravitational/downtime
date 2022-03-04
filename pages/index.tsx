@@ -1,32 +1,26 @@
-import { RawJoke } from "components/JokeParser";
+import { RawJoke, JokeParser } from "components/JokeParser";
 import Logo from "components/Logo";
-import { createClient } from "contentful";
 import { generateFeed } from "../scripts/gen-rss";
+import getJokes from "lib/jokes";
 
-export default function Home() {
+interface HomeProps {
+  jokes: RawJoke[];
+}
+export default function Home({ jokes }: HomeProps) {
   return (
     <div className="flex flex-col items-center w-full">
       <Logo />
+      <JokeParser jokes={jokes} />
     </div>
   );
 }
 
 export async function getStaticProps() {
-  const contentfulClient = createClient({
-    accessToken: `${process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN}`,
-    space: `${process.env.CONTENTFUL_SPACE_ID}`,
-  });
+  const jokes = await getJokes();
 
-  const res = await contentfulClient.getEntries({
-    content_type: "joke",
-    order: "-fields.pubDate",
-  });
+  await generateFeed(jokes as RawJoke[]);
 
-  //getStaticProps is run in order to generate RSS feed with this function call:
-  await generateFeed(res.items as RawJoke[]);
-
-  //getStaticProps requires props to be returned - returning an empty object as this component does not need props
   return {
-    props: {},
+    props: { jokes },
   };
 }

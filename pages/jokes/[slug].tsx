@@ -1,6 +1,7 @@
 import { createClient } from "contentful";
-import { Joke, RawJoke } from "components/JokeParser";
+import { Joke, RawJoke, JokeParser } from "components/JokeParser";
 import Logo from "components/Logo";
+import getJokes from 'lib/jokes';
 
 const contentfulClient = createClient({
   accessToken: `${process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN}`,
@@ -8,15 +9,17 @@ const contentfulClient = createClient({
 });
 interface JokePageProps {
   currentJoke: RawJoke;
+  remainingJokes: RawJoke[];
 }
 
-const JokePage = ({ currentJoke }: JokePageProps) => {
+const JokePage = ({ currentJoke, remainingJokes }: JokePageProps) => {
   return (
     <div className="flex flex-col items-center w-full">
       <Logo />
       <div className="flex justify-center w-full">
         <Joke joke={currentJoke} isIndividualJoke />
       </div>
+      <JokeParser jokes={remainingJokes} />
     </div>
   );
 };
@@ -46,8 +49,17 @@ export async function getStaticProps(context: { params: { slug: any } }) {
     "fields.slug": context.params.slug,
   });
 
+  const currentJoke = res.items[0] as RawJoke;
+
+  const jokes = await getJokes() as RawJoke[];
+
+  const remainingJokes = jokes.filter(joke => joke.fields.slug !== currentJoke.fields.slug)
+
   return {
-    props: { currentJoke: res.items[0] },
+    props: { 
+      currentJoke,
+      remainingJokes,
+    },
   };
 }
 

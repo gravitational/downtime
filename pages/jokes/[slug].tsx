@@ -1,12 +1,7 @@
-import { createClient } from "contentful";
 import { Joke, RawJoke, JokeParser } from "components/JokeParser";
 import Logo from "components/Logo";
 import getJokes from "lib/jokes";
 
-const contentfulClient = createClient({
-  accessToken: `${process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN}`,
-  space: `${process.env.CONTENTFUL_SPACE_ID}`,
-});
 interface JokePageProps {
   currentJoke: RawJoke;
   remainingJokes: RawJoke[];
@@ -25,11 +20,7 @@ const JokePage = ({ currentJoke, remainingJokes }: JokePageProps) => {
 };
 
 export const getStaticPaths = async () => {
-  const res = await contentfulClient.getEntries({
-    content_type: "joke",
-  });
-
-  const jokes = res.items as RawJoke[];
+  const jokes = (await getJokes()) as RawJoke[];
 
   const paths = jokes.map((item) => {
     return {

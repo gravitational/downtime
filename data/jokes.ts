@@ -351,6 +351,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 2, 1),
     anchor: 10042,
   },
+  {
+    headline:
+      "Once-Proud Database Humbled Five Minutes Into Jepsen Test",
+    image: "/assets/images/dataCenter@2x.jpg",
+    twitterImage: "pic.twitter.com/PGXMx6um2p",
+    pubDate: new Date(2022, 2, 8),
+    anchor: 10043,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

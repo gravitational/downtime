@@ -359,6 +359,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 2, 8),
     anchor: 10043,
   },
+  {
+    headline:
+      "Currency Of The Future Enters 4th Hour Of Transaction Process",
+    image: "/assets/images/ethereum.jpg",
+    twitterImage: "pic.twitter.com/5vbnwNr2iv",
+    pubDate: new Date(2022, 2, 9),
+    anchor: 10044,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

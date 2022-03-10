@@ -41,7 +41,6 @@ export const Joke = ({ joke, isIndividualJoke = false }: JokeProps) => {
 
   const anchorString = anchor || "00000";
 
-  // const hrefString = tweetEncoder(headline, anchorString, twitterEmbeddedCode);
   const hrefString = tweetEncoder(headline, slug, twitterEmbeddedCode);
 
   return (
@@ -51,11 +50,6 @@ export const Joke = ({ joke, isIndividualJoke = false }: JokeProps) => {
         <a id={anchorString} rel="nofollow"></a>
       </div>
       <div id="card" className={styles.cardOuter}>
-        {/* <div className={styles.headline}>
-          <span className={styles.span1}>
-            {smoker} {headline}
-          </span>
-        </div> */}
         {isIndividualJoke ? (
           <div className={styles.headline}>
             <span className={styles.span1}>

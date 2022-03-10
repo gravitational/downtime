@@ -4,10 +4,8 @@ import * as styles from "./Logo.css";
 
 const Logo = () => {
   return (
-    <div className={styles.outer}>
-      <div className={styles.imageContainer}>
-        <NextImage src={logo} alt="downtime logo" />
-      </div>
+    <div className={styles.imageContainer}>
+      <NextImage src={logo} alt="downtime logo" />
     </div>
   );
 };

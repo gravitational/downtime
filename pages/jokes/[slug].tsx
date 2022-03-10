@@ -1,7 +1,7 @@
 import { Joke, RawJoke, JokeParser } from "components/JokeParser";
 import Logo from "components/Logo";
 import getJokes from "lib/jokes";
-import * as styles from "components/Logo/Logo.css";
+import * as styles from "components/index.css";
 
 interface JokePageProps {
   currentJoke: RawJoke;
@@ -27,6 +27,8 @@ export const getStaticPaths = async () => {
     };
   });
 
+  // Will pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
   return {
     paths,
     fallback: false,

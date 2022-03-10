@@ -1,7 +1,7 @@
 
 export const tweetEncoder = (
   headline: string,
-  anchor: string,
+  slug: string,
   embeddedCode: string
 ): string => {
   const twitterImageURL = twitterImageURLParser(embeddedCode);
@@ -9,10 +9,10 @@ export const tweetEncoder = (
   return twitterImageURL
     ? `https://twitter.com/intent/tweet?text=${encodeURIComponent(
         headline
-      )}%20https%3A%2F%2Fdowntime.dev/%23${anchor}%20${twitterImageURL}`
+      )}%20https%3A%2F%2Fdowntime.dev/jokes/${slug}%20${twitterImageURL}`
     : `https://twitter.com/intent/tweet?text=${encodeURIComponent(
         headline
-      )}%20https%3A%2F%2Fdowntime.dev/%23${anchor}`;
+      )}%20https%3A%2F%2Fdowntime.dev/jokes/${slug}`;
 };
 
 /*

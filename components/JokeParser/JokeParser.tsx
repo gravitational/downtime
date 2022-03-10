@@ -22,18 +22,27 @@ const JokeParser = ({ jokes }: JokeParserProps) => {
 
 interface JokeProps {
   joke: RawJoke;
+  isIndividualJoke?: boolean;
 }
 
-const Joke = ({ joke }: JokeProps) => {
-  const { smoker, headline, image, pubDate, anchor, twitterEmbeddedCode } =
-    joke.fields;
+export const Joke = ({ joke, isIndividualJoke = false }: JokeProps) => {
+  const {
+    smoker,
+    headline,
+    image,
+    pubDate,
+    anchor,
+    twitterEmbeddedCode,
+    slug,
+  } = joke.fields;
 
   const dateArray = new Date(pubDate).toDateString().split(" ");
   const [weekday, month, day, year] = dateArray;
 
   const anchorString = anchor || "00000";
 
-  const hrefString = tweetEncoder(headline, anchorString, twitterEmbeddedCode);
+  // const hrefString = tweetEncoder(headline, anchorString, twitterEmbeddedCode);
+  const hrefString = tweetEncoder(headline, slug, twitterEmbeddedCode);
 
   return (
     <>
@@ -42,11 +51,26 @@ const Joke = ({ joke }: JokeProps) => {
         <a id={anchorString} rel="nofollow"></a>
       </div>
       <div id="card" className={styles.cardOuter}>
-        <div className={styles.headline}>
+        {/* <div className={styles.headline}>
           <span className={styles.span1}>
             {smoker} {headline}
           </span>
-        </div>
+        </div> */}
+        {isIndividualJoke ? (
+          <div className={styles.headline}>
+            <span className={styles.span1}>
+              {smoker} {headline}
+            </span>
+          </div>
+        ) : (
+          <Link href={`/jokes/${slug}`}>
+            <a className={styles.headline}>
+              <span className={styles.span1}>
+                {smoker} {headline}
+              </span>
+            </a>
+          </Link>
+        )}
         {image && (
           <div className={styles.imageContainer}>
             <NextImage

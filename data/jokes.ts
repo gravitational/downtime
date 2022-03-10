@@ -367,6 +367,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 2, 9),
     anchor: 10044,
   },
+  {
+    headline:
+      "Couple Seeking Living Room Couch That Will Compliment Dell Precision 7920 Tower with Dual Monitors",
+    image: "/assets/images/coupleBuysFurniture@2x.jpg",
+    twitterImage: "pic.twitter.com/YMsw2Lw1LW",
+    pubDate: new Date(2022, 2, 10),
+    anchor: 10045,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

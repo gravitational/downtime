@@ -1,41 +1,18 @@
 import NextHead from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
-// import {host, buildURL} from "utilities/url";
-import { buildCanonicalUrl, host } from "utilities/url";
 
-export interface HeadProps {
-  imageUrl?: string;
-  description?: string;
-  // titleSuffix?: string;
-  // url?: string;
-  isHomePage?: boolean
+export interface HomePageHeadProps {
   noIndex?: boolean;
 }
 
-const Head = ({ 
-  imageUrl,
+const HomePageHead = ({ 
   noIndex,
-  description = "Hard-hitting tech news while your code compiles.",
-  isHomePage = false,
- }: HeadProps) => {
+ }: HomePageHeadProps) => {
   const router = useRouter();
-  const urlSlug = router.asPath;
+  const url = router.asPath;
 
-  // const host = process.env.DOWNTIME_PUBLIC_HOST;
-
-  const url = `${host}${urlSlug}`;
-  console.log("url", url)
-
-  console.log("urlSlug", urlSlug)
-
-  const finalUrl = buildCanonicalUrl(urlSlug)
-  console.log("finalUrl", finalUrl)
-
-  console.log("host", host)
-  const imagePath = `https:${imageUrl}`;
-
-  // console.log("process.env", process.env)
+  const imagePath = "";
 
   return (
     <NextHead>
@@ -44,7 +21,7 @@ const Head = ({
       <link rel="icon" href="/assets/favicon.ico" />
       <meta
         name="description"
-        content={`${description}`}
+        content="Hard-hitting tech news while your code compiles."
       />
       <style>
         @import
@@ -63,7 +40,7 @@ const Head = ({
       {noIndex && <meta name="robots" content="noindex" />}
       <meta
         property="og:image"
-        content={imagePath}
+        content="https://www.downtime.dev/assets/images/bored@2x.jpg"
       />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content="downtime.dev" />
@@ -74,10 +51,10 @@ const Head = ({
       <meta property="twitter:url" content={url} />
       <meta
         property="twitter:image"
-        content={imagePath}
+        content="https://www.downtime.dev/assets/images/bored@2x.jpg"
       />
     </NextHead>
   );
 };
 
-export default Head;
+export default HomePageHead;

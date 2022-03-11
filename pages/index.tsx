@@ -1,4 +1,5 @@
 import { RawJoke, JokeParser } from "components/JokeParser";
+import { HomePageHead } from "components/Head";
 import * as styles from "components/index.css"
 import { generateFeed } from "../scripts/gen-rss";
 import getJokes from "lib/jokes";
@@ -10,6 +11,7 @@ export interface HomeProps {
 export default function Home({ jokes }: HomeProps) {
   return (
     <div className={styles.outer}>
+      <HomePageHead />
       <Logo />
       <JokeParser jokes={jokes} />
     </div>

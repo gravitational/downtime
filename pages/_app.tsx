@@ -6,9 +6,20 @@ import "../styles/globals.css";
 import { GTAGPageView } from "utilities/google/gtag";
 import { GTMPageView } from "utilities/google/gtm";
 import Script from "next/script";
+// import dotEnv from "dotenv";
+// import { resolve, join } from "path";
+// import * as fs from "fs/promises";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
+  // dotEnv.config();
+//   dotEnv.config();
+
+// if (process.env.NODE_ENV === "development") {
+//   dotEnv.config({ path: resolve(process.cwd(), ".env.development") });
+// } else {
+//   dotEnv.config({ path: resolve(process.cwd(), ".env.production") });
+// }
 
   useEffect(() => {
     const handleRouteChange = (url: URL) => {

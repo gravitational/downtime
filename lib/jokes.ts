@@ -1,12 +1,18 @@
 import { readFileSync, writeFileSync } from "fs";
 import path from "path";
 import { createClient } from "contentful";
+import getConfig from "./configManager";
 
 async function fetchJokesData() {
+
+  const config = getConfig(process.env.CONTENTFUL_ENVIRONMENT as string)
+
   console.log("Fetching jokes data...");
+  
   const contentfulClient = createClient({
-    accessToken: process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN as string,
-    space: process.env.CONTENTFUL_SPACE_ID as string,
+    space: config.spaceId as string,
+    accessToken: config.accessToken as string,
+    environment: config.environment
   });
 
   // fetch the raw data from Contentful

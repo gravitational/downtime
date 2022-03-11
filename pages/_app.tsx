@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import type { AppProps } from "next/app";
 import Layout from "components/Layout";
-import Head from "components/Head";
 import "../styles/globals.css";
 import { GTAGPageView } from "utilities/google/gtag";
 import { GTMPageView } from "utilities/google/gtm";
@@ -65,7 +64,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         }}
       />
       {/* Google Analytics End */}
-      <Head />
       <Layout>
         <Component {...pageProps} />
       </Layout>

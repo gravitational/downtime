@@ -2,9 +2,20 @@ import NextHead from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 
-const Head = () => {
+export interface HeadProps {
+  // title: string;
+  imageUrl: string;
+  // description?: string;
+  // titleSuffix?: string;
+  // url?: string;
+  noIndex?: boolean;
+}
+
+const Head = ({ imageUrl, noIndex }: HeadProps) => {
   const router = useRouter();
   const url = router.asPath;
+
+  const imagePath = "";
 
   return (
     <NextHead>
@@ -20,12 +31,16 @@ const Head = () => {
         url(&apos;https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap&apos;);{" "}
       </style>
       <meta property="og:type" content="website" />
+      {/* <link rel="apple-touch-icon" href="/static/apple.png" /> */}
+      {/* <link rel="manifest" href="/static/manifest.webmanifest" /> */}
       <meta property="og:url" content={url} />
+      {/* <link rel="canonical" href={url} /> */}
       <meta property="og:title" content="downtime.dev" />
       <meta
         property="og:description"
         content="Hard-hitting news for when your code is compiling."
       />
+      {noIndex && <meta name="robots" content="noindex" />}
       <meta
         property="og:image"
         content="https://www.downtime.dev/assets/images/bored@2x.jpg"
@@ -39,7 +54,8 @@ const Head = () => {
       <meta property="twitter:url" content={url} />
       <meta
         property="twitter:image"
-        content="https://www.downtime.dev/assets/images/bored@2x.jpg"
+        // content="https://www.downtime.dev/assets/images/bored@2x.jpg"
+        content={"//images.ctfassets.net/" + ""}
       />
     </NextHead>
   );

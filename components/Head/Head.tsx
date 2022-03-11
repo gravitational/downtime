@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import React from "react";
 // import {host, buildURL} from "utilities/url";
 import { buildCanonicalUrl, host } from "utilities/url";
+require('dotenv').config()
 
 export interface HeadProps {
   imageUrl?: string;
@@ -22,7 +23,7 @@ const Head = ({
   const router = useRouter();
   const urlSlug = router.asPath;
 
-  // const host = process.env.DOWNTIME_PUBLIC_HOST;
+  // const host = process.env.NEXT_PUBLIC_HOST;
 
   const url = `${host}${urlSlug}`;
   console.log("url", url)

@@ -2,6 +2,8 @@ import NextHead from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 
+
+const host = process.env.NEXT_PUBLIC_HOST;
 export interface HomePageHeadProps {
   noIndex?: boolean;
 }

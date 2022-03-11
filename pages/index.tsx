@@ -19,7 +19,7 @@ export default function Home({ jokes }: HomeProps) {
 export async function getStaticProps() {
   const jokes = await getJokes();
 
-  await generateFeed(jokes as RawJoke[]);
+  // await generateFeed(jokes as RawJoke[]);
 
   return {
     props: {

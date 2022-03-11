@@ -375,6 +375,15 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 2, 10),
     anchor: 10045,
   },
+  {
+    smoker: "Study:",
+    headline:
+      "Average Computer Lasts 4 Years Before Being Hurled Out Window In Frustration",
+    image: "/assets/images/computerOnDesk@2x.jpg",
+    twitterImage: "pic.twitter.com/0FoawuU17z",
+    pubDate: new Date(2022, 2, 11),
+    anchor: 10046,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

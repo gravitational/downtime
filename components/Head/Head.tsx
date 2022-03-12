@@ -1,5 +1,4 @@
 import NextHead from "next/head";
-import { RawJoke } from "components/JokeParser";
 import { useRouter } from "next/router";
 import React from "react";
 
@@ -7,20 +6,36 @@ const host = process.env.NEXT_PUBLIC_HOST;
 
 export interface HeadProps {
   noIndex?: boolean;
-  joke: RawJoke;
+  imageURL?: string;
+  smoker?: string | undefined;
+  headline?: string;
+  isHomePage?: boolean;
+}
+
+const setDescription = (isHomePage: boolean, smoker: string | undefined, headline: string | undefined): string | undefined => {
+  let description;
+  if (isHomePage) {
+    description = "Hard-hitting news for when your code is compiling."
+  } else {
+    description = smoker ? `${smoker}: ${headline}` : headline;
+  }
+
+  return description;
 }
 
 const Head = ({
+  isHomePage = false,
   noIndex,
-  joke,
+  imageURL,
+  smoker,
+  headline,
 }: HeadProps) => {
-  const { smoker, headline, image } = joke.fields;
-
   const router = useRouter();
   const urlSlug = router.asPath;
-  const description = smoker ? `${smoker}: ${headline}` : headline;
   const url = `${host}${urlSlug}`;
-  const imagePath = `https:${image.fields.file.url}`;
+  const imagePath = isHomePage ? "https://www.downtime.dev/assets/images/bored@2x.jpg" : `https:${imageURL}`;
+
+  const description = setDescription(isHomePage, smoker, headline)
 
   return (
     <NextHead>

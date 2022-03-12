@@ -1,4 +1,4 @@
-const baseUrl = "https://downtime-git-delia-ve-contentful-updates-gravitational.vercel.app/"
+const baseUrl = "https://downtime-git-delia-ve-contentful-updates-gravitational.vercel.app"
 
 export const tweetEncoder = (
   headline: string,

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { setCookie } from "nookies";
-import * as styles from "./GDPR.css"
+import * as styles from "./GDPR.css";
 
 const GDPR = () => {
   const gdprBanner = useRef<HTMLDivElement>(null);
@@ -59,17 +59,11 @@ const GDPR = () => {
   return (
     <>
       {/* GDPR banner only renders if there is no existing gdpr cookie */}
-      <div
-        ref={gdprBanner}
-        className={styles.bannerContainer}
-      >
+      <div ref={gdprBanner} className={styles.bannerContainer}>
         <div className={styles.banner}>
           This site uses cookies to improve user experience. By using this site,
           you agree to our use of cookies.
-          <button
-            onClick={handleClick}
-            className={styles.button}
-          >
+          <button onClick={handleClick} className={styles.button}>
             OK, boss
           </button>
         </div>

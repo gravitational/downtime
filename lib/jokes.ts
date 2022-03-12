@@ -10,8 +10,8 @@ async function fetchJokesData() {
   console.log("Fetching jokes data...");
   
   const contentfulClient = createClient({
-    space: `${config.spaceId}`,
-    accessToken: `${config.accessToken}`,
+    space: config.spaceId as string,
+    accessToken: config.accessToken as string,
     environment: config.environment
   });
 

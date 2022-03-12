@@ -1,5 +1,5 @@
 import { RawJoke, JokeParser } from "components/JokeParser";
-import * as styles from "components/index.css"
+import * as styles from "components/index.css";
 import { generateFeed } from "../scripts/gen-rss";
 import getJokes from "lib/jokes";
 import Logo from "components/Logo";

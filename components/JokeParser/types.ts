@@ -33,8 +33,8 @@ interface ImageFields {
       image: {
         height: number;
         width: number;
-      }
-    }
+      };
+    };
   };
   title: string;
 }

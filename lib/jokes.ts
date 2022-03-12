@@ -5,7 +5,7 @@ import getConfig from "./configManager";
 
 async function fetchJokesData() {
 
-  const config = getConfig(process.env.CONTENTFUL_ENVIRONMENT as string)
+  const config = getConfig("test-env1")
 
   console.log("Fetching jokes data...");
   

@@ -12,10 +12,9 @@ const HomePageHead = ({
   noIndex,
  }: HomePageHeadProps) => {
   const router = useRouter();
-  const url = router.asPath;
-
-  const imagePath = "";
-
+  const urlSlug = router.asPath;
+  const url = `${host}${urlSlug}`;
+  
   return (
     <NextHead>
       <title>downtime.dev</title>
@@ -30,10 +29,7 @@ const HomePageHead = ({
         url(&apos;https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap&apos;);{" "}
       </style>
       <meta property="og:type" content="website" />
-      {/* <link rel="apple-touch-icon" href="/static/apple.png" /> */}
-      {/* <link rel="manifest" href="/static/manifest.webmanifest" /> */}
       <meta property="og:url" content={url} />
-      {/* <link rel="canonical" href={url} /> */}
       <meta property="og:title" content="downtime.dev" />
       <meta
         property="og:description"

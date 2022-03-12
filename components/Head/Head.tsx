@@ -1,28 +1,26 @@
 import NextHead from "next/head";
+import { RawJoke } from "components/JokeParser";
 import { useRouter } from "next/router";
 import React from "react";
 
 const host = process.env.NEXT_PUBLIC_HOST;
 
 export interface HeadProps {
-  imageUrl?: string;
-  description?: string;
-  isHomePage?: boolean;
   noIndex?: boolean;
+  joke: RawJoke;
 }
 
 const Head = ({
-  imageUrl,
   noIndex,
-  description = "Hard-hitting tech news while your code compiles.",
+  joke,
 }: HeadProps) => {
+  const { smoker, headline, image } = joke.fields;
+
   const router = useRouter();
   const urlSlug = router.asPath;
-
+  const description = smoker ? `${smoker}: ${headline}` : headline;
   const url = `${host}${urlSlug}`;
-  console.log("url", url);
-
-  const imagePath = `https:${imageUrl}`;
+  const imagePath = `https:${image.fields.file.url}`;
 
   return (
     <NextHead>
@@ -39,14 +37,14 @@ const Head = ({
       <meta property="og:title" content="downtime.dev" />
       <meta
         property="og:description"
-        content="Hard-hitting news for when your code is compiling."
+        content={description}
       />
       <meta property="og:image" content={imagePath} />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content="downtime.dev" />
       <meta
         property="twitter:description"
-        content="Hard-hitting news for when your code is compiling."
+        content={description}
       />
       <meta property="twitter:url" content={url} />
       <meta property="twitter:image" content={imagePath} />

@@ -10,12 +10,9 @@ interface JokePageProps {
 }
 
 const JokePage = ({ currentJoke, remainingJokes }: JokePageProps) => {
-  console.log("currentJoke", currentJoke)
-  const url = currentJoke.fields.image.fields.file.url
-  console.log("url", url)
   return (
     <div className={styles.outer}>
-      <Head imageUrl={currentJoke.fields.image.fields.file.url}/>
+      <Head joke={currentJoke}/>
       <Logo />
       <Joke joke={currentJoke} isIndividualJoke />
       <JokeParser jokes={remainingJokes} />

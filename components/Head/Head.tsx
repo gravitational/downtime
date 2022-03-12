@@ -49,13 +49,14 @@ const Head = ({
       </style>
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
+      <link rel="canonical" href={url}/>
       <meta property="og:title" content="downtime.dev" />
       <meta
         property="og:description"
         content={description}
       />
       <meta property="og:image" content={imagePath} />
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="downtime.dev" />
       <meta
         property="twitter:description"

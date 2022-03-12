@@ -32,7 +32,9 @@ export const Joke = ({ joke, isIndividualJoke = false }: JokeProps) => {
   const dateArray = new Date(pubDate).toDateString().split(" ");
   const [weekday, month, day, year] = dateArray;
 
-  const hrefString = tweetEncoder(headline, slug, twitterEmbeddedCode);
+  const imageUrl = image.fields.file.url;
+
+  const hrefString = tweetEncoder(headline, slug, twitterEmbeddedCode, imageUrl);
 
   return (
     <div id="card" className={styles.cardOuter}>

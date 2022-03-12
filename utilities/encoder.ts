@@ -1,18 +1,23 @@
+const baseUrl = "https://downtime-git-delia-ve-contentful-updates-gravitational.vercel.app/"
 
 export const tweetEncoder = (
   headline: string,
   slug: string,
-  embeddedCode: string
+  embeddedCode: string,
+  imageUrl: string,
 ): string => {
   const twitterImageURL = twitterImageURLParser(embeddedCode);
 
-  return twitterImageURL
-    ? `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-        headline
-      )}%20https%3A%2F%2Fdowntime.dev/jokes/${slug}%20${twitterImageURL}`
-    : `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-        headline
-      )}%20https%3A%2F%2Fdowntime.dev/jokes/${slug}`;
+  // return `https://twitter.com/intent/tweet?text=${baseUrl}/jokes/${slug}%20https:${imageUrl}`
+  return `https://twitter.com/intent/tweet?text=${baseUrl}/jokes/${slug}`
+
+  // return twitterImageURL
+  //   ? `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+  //       headline
+  //     )}%20https%3A%2F%2Fdowntime.dev/jokes/${slug}%20${twitterImageURL}`
+  //   : `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+  //       headline
+  //     )}%20https%3A%2F%2Fdowntime.dev/jokes/${slug}`;
 };
 
 /*

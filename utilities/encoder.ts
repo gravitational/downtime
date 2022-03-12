@@ -8,8 +8,14 @@ export const tweetEncoder = (
 ): string => {
   const twitterImageURL = twitterImageURLParser(embeddedCode);
 
+  const url = `${baseUrl}/jokes/${slug}`
+
   // return `https://twitter.com/intent/tweet?text=${baseUrl}/jokes/${slug}%20https:${imageUrl}`
-  return `https://twitter.com/intent/tweet?text=${baseUrl}/jokes/${slug}`
+  // return `https://twitter.com/intent/tweet?text=${encodeURIComponent(url)}`
+
+  // return `http://twitter.com/share?text=${headline}&url=${url}`
+
+  return `https://twitter.com/intent/tweet?text=${encodeURIComponent(url)}`
 
   // return twitterImageURL
   //   ? `https://twitter.com/intent/tweet?text=${encodeURIComponent(

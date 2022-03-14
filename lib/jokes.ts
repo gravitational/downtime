@@ -5,7 +5,10 @@ import getConfig from "./configManager";
 
 async function fetchJokesData() {
 
-  const config = getConfig("test-env1")
+  console.log("process.env", process.env.CONTENTFUL_ENVIRONMENT)
+
+  // fetches current working environment from .env.local and passes in as argument
+  const config = getConfig(process.env.CONTENTFUL_ENVIRONMENT as string)
 
   console.log("Fetching jokes data...");
   
@@ -36,6 +39,8 @@ export default async function getJokes() {
     cachedData = await JSON.parse(
       readFileSync(path.join(__dirname, JOKES_CACHE_PATH), "utf8")
     );
+
+    console.log("cachedData 1", cachedData)
   } catch (error) {
     console.log("Joke cache not initialized. Attempting to build cache now...");
   }

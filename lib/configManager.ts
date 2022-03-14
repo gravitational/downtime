@@ -1,4 +1,5 @@
 const getConfig = (environment: string) => {
+  console.log("env", environment)
   let accessToken;
   if (environment === "test-env1") {
     accessToken = process.env.STAGING_CONTENTFUL_DELIVERY_ACCESS_TOKEN

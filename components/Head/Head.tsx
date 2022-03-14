@@ -45,7 +45,7 @@ const Head = ({
 
   return (
     <NextHead>
-      <title>downtime</title>
+      <title>downtime.dev</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <link rel="icon" href="/assets/favicon.ico" />
       <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
@@ -56,15 +56,15 @@ const Head = ({
         url(&apos;https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap&apos;);{" "}
       </style>
       <meta property="og:type" content="website" />
-      {/* <meta property="og:url" content={url} /> */}
-      {/* <link rel="canonical" href={url} /> */}
-      <meta property="og:title" content="downtime" />
+      <meta property="og:url" content={url} />
+      <link rel="canonical" href={url} />
+      <meta property="og:title" content="downtime.dev" />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={imagePath} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="downtime" />
+      <meta name="twitter:title" content="downtime.dev" />
       <meta property="twitter:description" content={description} />
-      {/* <meta property="twitter:url" content={url} /> */}
+      <meta property="twitter:url" content={url} />
       <meta property="twitter:image" content={imagePath} />
     </NextHead>
   );

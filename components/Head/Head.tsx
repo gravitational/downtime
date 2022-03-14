@@ -12,27 +12,27 @@ export interface HeadProps {
   isHomePage?: boolean;
 }
 
-// const setDescription = (
-//   isHomePage: boolean,
-//   smoker: string | undefined,
-//   headline: string | undefined
-// ): string | undefined => {
-//   let description;
-//   if (isHomePage) {
-//     description = "Hard-hitting news for when your code is compiling.";
-//   } else {
-//     description = smoker ? `${smoker}: ${headline}` : headline;
-//   }
+const setDescription = (
+  isHomePage: boolean,
+  smoker: string | undefined,
+  headline: string | undefined
+): string | undefined => {
+  let description;
+  if (isHomePage) {
+    description = "Hard-hitting news for when your code is compiling.";
+  } else {
+    description = smoker ? `${smoker}: ${headline}` : headline;
+  }
 
-//   return description;
-// };
+  return description;
+};
 
 const Head = ({
   isHomePage = false,
   noIndex,
   imageURL,
-  // smoker,
-  // headline,
+  smoker,
+  headline,
 }: HeadProps) => {
   const router = useRouter();
   const urlSlug = router.asPath;
@@ -41,8 +41,10 @@ const Head = ({
     ? "https://www.downtime.dev/assets/images/bored@2x.jpg"
     : `https:${imageURL}`;
 
-  // const description = setDescription(isHomePage, smoker, headline);
+  const title = setDescription(isHomePage, smoker, headline);
   const description = "Hard-hitting news for when your code is compiling."
+
+  // const title = 
 
   return (
     <NextHead>
@@ -63,7 +65,7 @@ const Head = ({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={imagePath} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="downtime.dev" />
+      <meta name="twitter:title" content={title} />
       <meta property="twitter:description" content={description}/>
       <meta property="twitter:url" content={url} />
       <meta property="twitter:image" content={imagePath} />

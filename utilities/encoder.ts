@@ -1,4 +1,7 @@
+// for testing share on twitter links with Vercel preview
 const baseUrl = "https://downtime-git-delia-ve-contentful-updates-gravitational.vercel.app"
+
+// const baseUrl = process.env.NEXT_PUBLIC_HOST || "https://www.downtime.dev";
 
 export const tweetEncoder = (
   headline: string,

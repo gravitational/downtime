@@ -48,6 +48,8 @@ const Head = ({
       <title>downtime.dev</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <link rel="icon" href="/assets/favicon.ico" />
+      <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+      <link rel="apple-touch-icon" href="/assets/favicon.ico" />
       <meta name="description" content={`${description}`} />
       <style>
         @import

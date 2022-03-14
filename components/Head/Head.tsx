@@ -39,7 +39,7 @@ const Head = ({
 
   return (
     <NextHead>
-      <title>{description}</title>
+      <title>downtime.dev</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <link rel="icon" href="/assets/favicon.ico" />
       <meta name="description" content={`${description}`} />
@@ -57,7 +57,7 @@ const Head = ({
       />
       <meta property="og:image" content={imagePath} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="downtime.dev" />
+      <meta name="twitter:title" content={description} />
       {/* <meta */}
         {/* property="twitter:description" */}
         {/* content={description} */}

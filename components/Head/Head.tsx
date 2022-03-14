@@ -12,16 +12,20 @@ export interface HeadProps {
   isHomePage?: boolean;
 }
 
-const setDescription = (isHomePage: boolean, smoker: string | undefined, headline: string | undefined): string | undefined => {
+const setDescription = (
+  isHomePage: boolean,
+  smoker: string | undefined,
+  headline: string | undefined
+): string | undefined => {
   let description;
   if (isHomePage) {
-    description = "Hard-hitting news for when your code is compiling."
+    description = "Hard-hitting news for when your code is compiling.";
   } else {
     description = smoker ? `${smoker}: ${headline}` : headline;
   }
 
   return description;
-}
+};
 
 const Head = ({
   isHomePage = false,
@@ -33,9 +37,11 @@ const Head = ({
   const router = useRouter();
   const urlSlug = router.asPath;
   const url = `${host}${urlSlug}`;
-  const imagePath = isHomePage ? "https://www.downtime.dev/assets/images/bored@2x.jpg" : `https:${imageURL}`;
+  const imagePath = isHomePage
+    ? "https://www.downtime.dev/assets/images/bored@2x.jpg"
+    : `https:${imageURL}`;
 
-  const description = setDescription(isHomePage, smoker, headline)
+  const description = setDescription(isHomePage, smoker, headline);
 
   return (
     <NextHead>
@@ -49,19 +55,13 @@ const Head = ({
       </style>
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
-      <link rel="canonical" href={url}/>
+      <link rel="canonical" href={url} />
       <meta property="og:title" content="downtime.dev" />
-      <meta
-        property="og:description"
-        content={description}
-      />
+      <meta property="og:description" content={description} />
       <meta property="og:image" content={imagePath} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={description} />
-      {/* <meta */}
-        {/* property="twitter:description" */}
-        {/* content={description} */}
-      {/* /> */}
+      <meta name="twitter:title" content="downtime.dev" />
+      <meta property="twitter:description" content={description} />
       <meta property="twitter:url" content={url} />
       <meta property="twitter:image" content={imagePath} />
     </NextHead>

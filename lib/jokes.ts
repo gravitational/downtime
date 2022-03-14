@@ -4,15 +4,14 @@ import { createClient } from "contentful";
 import getConfig from "./configManager";
 
 async function fetchJokesData() {
-
-  const config = getConfig("test-env1")
+  const config = getConfig("master");
 
   console.log("Fetching jokes data...");
-  
+
   const contentfulClient = createClient({
-    space: config.spaceId as string,
-    accessToken: config.accessToken as string,
-    environment: config.environment
+    space: config.spaceId,
+    accessToken: config.accessToken,
+    environment: config.environment,
   });
 
   // fetch the raw data from Contentful
@@ -24,9 +23,7 @@ async function fetchJokesData() {
   return res.items;
 }
 
-
 export default async function getJokes() {
-  
   const JOKES_CACHE_PATH = "./jokeData";
 
   let cachedData;
@@ -52,7 +49,10 @@ export default async function getJokes() {
         "utf8"
       );
 
-      console.log("Cache built. Jokes cached here:", path.join(__dirname, JOKES_CACHE_PATH));
+      console.log(
+        "Cache built. Jokes cached here:",
+        path.join(__dirname, JOKES_CACHE_PATH)
+      );
     } catch (error) {
       console.log("ERROR WRITING JOKES CACHE TO FILE");
       console.log(error);

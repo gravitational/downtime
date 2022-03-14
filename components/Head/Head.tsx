@@ -62,9 +62,9 @@ const Head = ({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={imagePath} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="downtime.dev" />
-      <meta property="twitter:description" content={description} />
-      <meta property="twitter:url" content={url} />
+      <meta name="twitter:title" content={description} />
+      {/* <meta property="twitter:description" content={description} /> */}
+      {/* <meta property="twitter:url" content={url} /> */}
       <meta property="twitter:image" content={imagePath} />
     </NextHead>
   );

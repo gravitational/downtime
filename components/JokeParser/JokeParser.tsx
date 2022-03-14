@@ -34,7 +34,7 @@ export const Joke = ({ joke, isIndividualJoke = false }: JokeProps) => {
 
   const imageUrl = image.fields.file.url;
 
-  const hrefString = tweetEncoder(headline, slug, twitterEmbeddedCode, imageUrl);
+  const hrefString = tweetEncoder(headline, slug);
 
   return (
     <div id="card" className={styles.cardOuter}>

@@ -384,6 +384,14 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 2, 11),
     anchor: 10046,
   },
+  {
+    headline:
+      "Study Finds 99% of App Outages Occur When App Monitoring System Down",
+    image: "/assets/images/dashboard@2x.jpg",
+    twitterImage: "pic.twitter.com/DS9KbgP8jQ",
+    pubDate: new Date(2022, 2, 14),
+    anchor: 10047,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

@@ -32,8 +32,6 @@ export const Joke = ({ joke, isIndividualJoke = false }: JokeProps) => {
   const dateArray = new Date(pubDate).toDateString().split(" ");
   const [weekday, month, day, year] = dateArray;
 
-  const imageUrl = image.fields.file.url;
-
   const hrefString = tweetEncoder(headline, slug);
 
   return (

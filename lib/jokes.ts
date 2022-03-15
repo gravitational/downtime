@@ -4,7 +4,7 @@ import { createClient } from "contentful";
 import getConfig from "./configManager";
 
 async function fetchJokesData() {
-  const config = getConfig("master");
+  const config = getConfig("test-env2");
 
   console.log("Fetching jokes data...");
 
@@ -17,7 +17,7 @@ async function fetchJokesData() {
   // fetch the raw data from Contentful
   const res = await contentfulClient.getEntries({
     content_type: "joke",
-    order: "-fields.pubDate",
+    order: "-sys.createdAt",
   });
 
   return res.items;

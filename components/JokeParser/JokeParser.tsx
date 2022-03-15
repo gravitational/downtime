@@ -29,7 +29,9 @@ export const Joke = ({ joke, isIndividualJoke = false }: JokeProps) => {
   const { smoker, headline, image, pubDate, twitterEmbeddedCode, slug } =
     joke.fields;
 
-  const dateArray = new Date(pubDate).toDateString().split(" ");
+  const firstPublishedDate = joke.sys.createdAt;
+
+  const dateArray = new Date(firstPublishedDate).toDateString().split(" ");
   const [weekday, month, day, year] = dateArray;
 
   const hrefString = tweetEncoder(headline, slug);

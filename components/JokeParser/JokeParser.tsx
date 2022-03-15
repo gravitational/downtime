@@ -26,76 +26,61 @@ interface JokeProps {
 }
 
 export const Joke = ({ joke, isIndividualJoke = false }: JokeProps) => {
-  const {
-    smoker,
-    headline,
-    image,
-    pubDate,
-    anchor,
-    twitterEmbeddedCode,
-    slug,
-  } = joke.fields;
+  const { smoker, headline, image, pubDate, twitterEmbeddedCode, slug } =
+    joke.fields;
 
   const dateArray = new Date(pubDate).toDateString().split(" ");
   const [weekday, month, day, year] = dateArray;
 
-  const anchorString = anchor || "00000";
-
-  const hrefString = tweetEncoder(headline, slug, twitterEmbeddedCode);
+  const hrefString = tweetEncoder(headline, slug);
 
   return (
-    <>
-      {/* Anchor is set above card so that navbar doesn't cover linked content */}
-      <div className={styles.anchorOuter}>
-        <a id={anchorString} rel="nofollow"></a>
-      </div>
-      <div id="card" className={styles.cardOuter}>
-        {isIndividualJoke ? (
-          <div className={styles.headline}>
+    <div id="card" className={styles.cardOuter}>
+      {isIndividualJoke ? (
+        <div className={styles.headline}>
+          <span className={styles.span1}>
+            {smoker} {headline}
+          </span>
+        </div>
+      ) : (
+        <Link href={`/jokes/${slug}`}>
+          <a className={styles.headline}>
             <span className={styles.span1}>
               {smoker} {headline}
             </span>
+          </a>
+        </Link>
+      )}
+      {image && (
+        <div className={styles.imageContainer}>
+          <NextImage
+            src={"https:" + image.fields.file.url}
+            alt="a hilariously apropos image"
+            height="400px"
+            width="600px"
+          />
+        </div>
+      )}
+      <div className={styles.shareOuter}>
+        <div className={styles.shareInner}>
+          <div className={styles.shareString}>
+            share this on{" "}
+            <Link href={hrefString}>
+              <a target="_blank" rel="noopener noreferrer">
+                <span className={styles.span2}>twitter</span>
+              </a>
+            </Link>
           </div>
-        ) : (
-          <Link href={`/jokes/${slug}`}>
-            <a className={styles.headline}>
-              <span className={styles.span1}>
-                {smoker} {headline}
-              </span>
-            </a>
-          </Link>
-        )}
-        {image && (
-          <div className={styles.imageContainer}>
-            <NextImage
-              src={"https:" + image.fields.file.url}
-              alt="a hilariously apropos image"
-              height="400px"
-              width="600px"
-            />
-          </div>
-        )}
-        <div className={styles.shareOuter}>
-          <div className={styles.shareInner}>
-            <div className={styles.shareString}>
-              share this on{" "}
-              <Link href={hrefString}>
-                <a target="_blank" rel="noopener noreferrer">
-                  <span className={styles.span2}>twitter</span>
-                </a>
-              </Link>
-            </div>
 
-            <div
-              title={`${weekday} • ${month} ${day}, ${year}`}
-              className={styles.date}
-            >
-              {month} {day}
-            </div>
+          <div
+            title={`${weekday} • ${month} ${day}, ${year}`}
+            className={styles.date}
+          >
+            {month} {day}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

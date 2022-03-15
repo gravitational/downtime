@@ -1,4 +1,5 @@
 import { Joke, RawJoke, JokeParser } from "components/JokeParser";
+import Head from "components/Head";
 import Logo from "components/Logo";
 import getJokes from "lib/jokes";
 import * as styles from "components/index.css";
@@ -11,6 +12,11 @@ interface JokePageProps {
 const JokePage = ({ currentJoke, remainingJokes }: JokePageProps) => {
   return (
     <div className={styles.outer}>
+      <Head
+        imageURL={currentJoke.fields.image.fields.file.url}
+        smoker={currentJoke.fields.smoker}
+        headline={currentJoke.fields.headline}
+      />
       <Logo />
       <Joke joke={currentJoke} isIndividualJoke />
       <JokeParser jokes={remainingJokes} />

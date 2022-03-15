@@ -10,8 +10,8 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div>
       <NavBar />
-      <GDPR />
       {children}
+      <GDPR />
     </div>
   );
 };

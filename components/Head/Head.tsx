@@ -12,19 +12,19 @@ export interface HeadProps {
   isHomePage?: boolean;
 }
 
-const setDescription = (
+const setTitle = (
   isHomePage: boolean,
   smoker: string | undefined,
   headline: string | undefined
 ): string | undefined => {
-  let description;
+  let title;
   if (isHomePage) {
-    description = "Hard-hitting news for when your code is compiling.";
+    title = "Hard-hitting news for when your code is compiling.";
   } else {
-    description = smoker ? `${smoker} ${headline}` : headline;
+    title = smoker ? `${smoker} ${headline}` : headline;
   }
 
-  return description;
+  return title;
 };
 
 const Head = ({
@@ -41,7 +41,7 @@ const Head = ({
     ? "https://www.downtime.dev/assets/images/bored@2x.jpg"
     : `https:${imageURL}`;
 
-  const title = setDescription(isHomePage, smoker, headline);
+  const title = setTitle(isHomePage, smoker, headline);
   const description = "Hard-hitting news for when your code is compiling."
 
   return (

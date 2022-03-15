@@ -21,7 +21,7 @@ const setDescription = (
   if (isHomePage) {
     description = "Hard-hitting news for when your code is compiling.";
   } else {
-    description = smoker ? `${smoker}: ${headline}` : headline;
+    description = smoker ? `${smoker} ${headline}` : headline;
   }
 
   return description;

@@ -392,6 +392,15 @@ const RawJokes: HeadlineProps[] = [
     pubDate: new Date(2022, 2, 14),
     anchor: 10047,
   },
+  {
+    smoker: "Report:",
+    headline:
+      "Last Chance To Stop AI Apocalypse Occurred 6 Years Ago",
+    image: "/assets/images/serverRoom@2x.jpg",
+    twitterImage: "pic.twitter.com/W8qhhF7f1C",
+    pubDate: new Date(2022, 2, 15),
+    anchor: 10048,
+  },
 ];
 
 //sorted into order by MOST RECENT DATE FIRST

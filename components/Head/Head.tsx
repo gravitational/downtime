@@ -37,6 +37,7 @@ const Head = ({
   const router = useRouter();
   const urlSlug = router.asPath;
   const url = `${host}${urlSlug}`;
+  console.log("host", host)
   const imagePath = isHomePage
     ? "https://www.downtime.dev/assets/images/bored@2x.jpg"
     : `https:${imageURL}`;
@@ -57,15 +58,15 @@ const Head = ({
         url(&apos;https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap&apos;);{" "}
       </style>
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="og url" />
-      <link rel="canonical" href="cannonical url" />
+      <meta property="og:url" content={url} />
+      <link rel="canonical" href={url} />
       <meta property="og:title" content="downtime.dev" />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={imagePath} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta property="twitter:description" content={description}/>
-      <meta property="twitter:url" content="twitter url here" />
+      <meta property="twitter:url" content={url} />
       <meta property="twitter:image" content={imagePath} />
     </NextHead>
   );

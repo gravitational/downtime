@@ -29,8 +29,6 @@ export const Joke = ({ joke, isIndividualJoke = false }: JokeProps) => {
   const { pubDate, headline, image, slug } =
     joke.fields;
 
-  console.log("pubDate", pubDate)
-
   const dateArray = new Date(pubDate).toDateString().split(" ");
   const [weekday, month, day, year] = dateArray;
 

@@ -26,7 +26,7 @@ interface JokeProps {
 }
 
 export const Joke = ({ joke, isIndividualJoke = false }: JokeProps) => {
-  const { smoker, headline, image, pubDate, twitterEmbeddedCode, slug } =
+  const { headline, image, slug } =
     joke.fields;
 
   const firstPublishedDate = joke.sys.createdAt;
@@ -41,14 +41,14 @@ export const Joke = ({ joke, isIndividualJoke = false }: JokeProps) => {
       {isIndividualJoke ? (
         <div className={styles.headline}>
           <span className={styles.span1}>
-            {smoker} {headline}
+            {headline}
           </span>
         </div>
       ) : (
         <Link href={`/jokes/${slug}`}>
           <a className={styles.headline}>
             <span className={styles.span1}>
-              {smoker} {headline}
+              {headline}
             </span>
           </a>
         </Link>

@@ -14,7 +14,6 @@ const JokePage = ({ currentJoke, remainingJokes }: JokePageProps) => {
     <div className={styles.outer}>
       <Head
         imageURL={currentJoke.fields.image.fields.file.url}
-        smoker={currentJoke.fields.smoker}
         headline={currentJoke.fields.headline}
       />
       <Logo />

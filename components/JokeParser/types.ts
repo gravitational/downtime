@@ -10,9 +10,6 @@ interface Fields {
   headline: string;
   image: Image;
   pubDate: string;
-  twitterEmbeddedCode: string;
-  smoker: string;
-  anchor: string;
   slug: string;
 }
 

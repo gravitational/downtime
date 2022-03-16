@@ -5,44 +5,26 @@ import React from "react";
 const host = process.env.NEXT_PUBLIC_HOST;
 
 export interface HeadProps {
-  noIndex?: boolean;
   imageURL?: string;
-  smoker?: string | undefined;
   headline?: string;
   isHomePage?: boolean;
 }
 
-const setTitle = (
-  isHomePage: boolean,
-  smoker: string | undefined,
-  headline: string | undefined
-): string | undefined => {
-  let title;
-  if (isHomePage) {
-    title = "Hard-hitting news for when your code is compiling.";
-  } else {
-    title = smoker ? `${smoker} ${headline}` : headline;
-  }
-
-  return title;
-};
-
 const Head = ({
   isHomePage = false,
-  noIndex,
   imageURL,
-  smoker,
   headline,
 }: HeadProps) => {
   const router = useRouter();
   const urlSlug = router.asPath;
   const url = `${host}${urlSlug}`;
-  console.log("host", host)
+
   const imagePath = isHomePage
     ? "https://www.downtime.dev/assets/images/bored@2x.jpg"
     : `https:${imageURL}`;
 
-  const title = setTitle(isHomePage, smoker, headline);
+
+  const title = isHomePage ? "Hard-hitting news for when your code is compiling." : headline;
   const description = "Hard-hitting news for when your code is compiling."
 
   return (

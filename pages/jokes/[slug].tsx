@@ -24,7 +24,7 @@ const JokePage = ({ currentJoke, remainingJokes }: JokePageProps) => {
 };
 
 export const getStaticPaths = async () => {
-  const jokes = (await getJokes()) as RawJoke[];
+  const jokes: RawJoke[] = await getJokes();
 
   const paths = jokes.map((item) => {
     return {
@@ -41,10 +41,10 @@ export const getStaticPaths = async () => {
 };
 
 export async function getStaticProps(context: { params: { slug: any } }) {
-  const jokes = (await getJokes()) as RawJoke[];
+  const jokes: RawJoke[] = await getJokes();
 
   let currentJoke;
-  const remainingJokes = [] as RawJoke[];
+  const remainingJokes: RawJoke[] = [];
 
   jokes.forEach((joke) => {
     if (joke.fields.slug === context.params.slug) {

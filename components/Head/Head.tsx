@@ -61,13 +61,14 @@ const Head = ({
       <meta property="og:url" content={url} />
       <link rel="canonical" href={url} />
       <meta property="og:title" content="downtime.dev" />
-      <meta property="og:description" content={description} />
+      {!isHomePage && <meta property="og:description" content={description} />}
       <meta property="og:image" content={imagePath} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
-      <meta property="twitter:description" content={description}/>
-      <meta property="twitter:url" content={url} />
-      <meta property="twitter:image" content={imagePath} />
+      {/* <meta property="twitter:description" content={description}/> */}
+      {/* <meta property="twitter:url" content={url} /> */}
+      <meta property="og:image" content={imagePath} />
+      {/* <meta property="twitter:image" content={imagePath} /> */}
     </NextHead>
   );
 };

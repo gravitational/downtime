@@ -67,7 +67,6 @@ const Head = ({
       <meta name="twitter:title" content={title} />
       {/* <meta property="twitter:description" content={description}/> */}
       {/* <meta property="twitter:url" content={url} /> */}
-      <meta property="og:image" content={imagePath} />
       {/* <meta property="twitter:image" content={imagePath} /> */}
     </NextHead>
   );

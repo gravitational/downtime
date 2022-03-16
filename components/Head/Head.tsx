@@ -25,7 +25,7 @@ const Head = ({
 
 
   const title = isHomePage ? "Hard-hitting news for when your code is compiling." : headline;
-  const description = "Hard-hitting news for when your code is compiling."
+  const description = "Hard-hitting news while your code compiles."
 
   return (
     <NextHead>

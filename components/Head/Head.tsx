@@ -10,22 +10,39 @@ export interface HeadProps {
   isHomePage?: boolean;
 }
 
-const Head = ({
-  isHomePage = false,
-  imageURL,
-  headline,
-}: HeadProps) => {
+/* Head component renders the meta data for each page. 
+One use of the meta data is to automatically create the summary_large_image card when sharing a url on Twitter
+
+Twitter card structures:
+
+Homepage (isHomePage = true):
+Large image
+downtime.dev
+Hard-hitting news while your code is compiling. - as title meta data
+
+
+Individual joke pages (isHomePage = false):
+Large image
+downtime.dev
+specific joke headline - as title meta data
+Hard-hitting news while your code is compiling - as og: description meta data
+*/
+
+const Head = ({ isHomePage = false, imageURL, headline }: HeadProps) => {
   const router = useRouter();
   const urlSlug = router.asPath;
   const url = `${host}${urlSlug}`;
 
+  //renders a locally stored image for homepage or a contentful image for individual joke pages
   const imagePath = isHomePage
     ? "https://www.downtime.dev/assets/images/bored@2x.jpg"
     : `https:${imageURL}`;
 
-
-  const title = isHomePage ? "Hard-hitting news for when your code is compiling." : headline;
-  const description = "Hard-hitting news while your code compiles."
+  const title = isHomePage
+    ? "Hard-hitting news while your code is compiling."
+    : headline;
+  
+  const description = "Hard-hitting news while your code compiles.";
 
   return (
     <NextHead>
@@ -42,7 +59,8 @@ const Head = ({
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
       <link rel="canonical" href={url} />
-      <meta property="og:title" content="downtime.dev" />
+      <meta property="og:title" content={title} />
+      {/* twitter cards only render description on individual joke pages */}
       {!isHomePage && <meta property="og:description" content={description} />}
       <meta property="og:image" content={imagePath} />
       <meta name="twitter:card" content="summary_large_image" />

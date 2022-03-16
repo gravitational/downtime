@@ -4,7 +4,7 @@ import { createClient } from "contentful";
 import getConfig from "./configManager";
 
 async function fetchJokesData() {
-  const config = getConfig("test-env2");
+  const config = getConfig("master");
 
   console.log("Fetching jokes data...");
 

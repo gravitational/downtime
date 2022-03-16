@@ -1,8 +1,4 @@
-// for testing share on twitter links with Vercel preview
-const baseUrl =
-  "https://downtime-git-delia-update-content-model-gravitational.vercel.app";
-
-// const baseUrl = "https://www.downtime.dev";
+const baseUrl = "https://www.downtime.dev";
 
 export const tweetEncoder = (headline: string, slug: string): string => {
   const url = `${baseUrl}/jokes/${slug}`;

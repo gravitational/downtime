@@ -17,7 +17,7 @@ async function fetchJokesData() {
   // fetch the raw data from Contentful
   const res = await contentfulClient.getEntries({
     content_type: "joke",
-    order: "-sys.createdAt",
+    order: "-fields.pubDate",
   });
 
   return res.items;

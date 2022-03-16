@@ -26,12 +26,12 @@ interface JokeProps {
 }
 
 export const Joke = ({ joke, isIndividualJoke = false }: JokeProps) => {
-  const { headline, image, slug } =
+  const { pubDate, headline, image, slug } =
     joke.fields;
 
-  const firstPublishedDate = joke.sys.createdAt;
+  console.log("pubDate", pubDate)
 
-  const dateArray = new Date(firstPublishedDate).toDateString().split(" ");
+  const dateArray = new Date(pubDate).toDateString().split(" ");
   const [weekday, month, day, year] = dateArray;
 
   const hrefString = tweetEncoder(headline, slug);

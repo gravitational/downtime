@@ -1,4 +1,5 @@
 import { Joke, RawJoke, JokeParser } from "components/JokeParser";
+import Head from "components/Head";
 import Logo from "components/Logo";
 import getJokes from "lib/jokes";
 import * as styles from "components/index.css";
@@ -11,6 +12,10 @@ interface JokePageProps {
 const JokePage = ({ currentJoke, remainingJokes }: JokePageProps) => {
   return (
     <div className={styles.outer}>
+      <Head
+        imageURL={currentJoke.fields.image.fields.file.url}
+        headline={currentJoke.fields.headline}
+      />
       <Logo />
       <Joke joke={currentJoke} isIndividualJoke />
       <JokeParser jokes={remainingJokes} />
@@ -19,7 +24,7 @@ const JokePage = ({ currentJoke, remainingJokes }: JokePageProps) => {
 };
 
 export const getStaticPaths = async () => {
-  const jokes = (await getJokes()) as RawJoke[];
+  const jokes: RawJoke[] = await getJokes();
 
   const paths = jokes.map((item) => {
     return {
@@ -36,10 +41,10 @@ export const getStaticPaths = async () => {
 };
 
 export async function getStaticProps(context: { params: { slug: any } }) {
-  const jokes = (await getJokes()) as RawJoke[];
+  const jokes: RawJoke[] = await getJokes();
 
   let currentJoke;
-  const remainingJokes = [] as RawJoke[];
+  const remainingJokes: RawJoke[] = [];
 
   jokes.forEach((joke) => {
     if (joke.fields.slug === context.params.slug) {

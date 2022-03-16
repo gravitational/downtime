@@ -4,7 +4,7 @@ const withVanillaExtract = createVanillaExtractPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["www.istockphoto.com", "images.ctfassets.net"]
+    domains: ["images.ctfassets.net"]
   }
 };
 

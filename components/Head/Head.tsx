@@ -34,7 +34,7 @@ const Head = ({
       <link rel="icon" href="/assets/favicon.ico" />
       <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
       <link rel="apple-touch-icon" href="/assets/favicon.ico" />
-      <meta name="description" content={`${description}`} />
+      <meta name="description" content={description} />
       <style>
         @import
         url(&apos;https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap&apos;);{" "}

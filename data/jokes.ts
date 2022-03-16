@@ -21,13 +21,6 @@ export interface HeadlineProps {
 
 const RawJokes: HeadlineProps[] = [
   {
-    headline: "Additional Monitor To Make Everything Better",
-    image: "/assets/images/3monitors@2x.jpg",
-    twitterImage: "pic.twitter.com/M11MauCMPS",
-    pubDate: new Date(2021, 11, 25),
-    anchor: 10013,
-  },
-  {
     headline:
       "Nation’s Leading Minds Enlisted To Protect Wikihow.com User Information",
     image: "/assets/images/cleanblinds@2x.png",
@@ -400,6 +393,13 @@ const RawJokes: HeadlineProps[] = [
     twitterImage: "pic.twitter.com/W8qhhF7f1C",
     pubDate: new Date(2022, 2, 15),
     anchor: 10048,
+  },
+  {
+    headline: "Additional Monitor To Make Everything Better",
+    image: "/assets/images/3monitors@2x.jpg",
+    twitterImage: "pic.twitter.com/M11MauCMPS",
+    pubDate: new Date(2022, 2, 16),
+    anchor: 10013,
   },
 ];
 

@@ -1,7 +1,7 @@
 import { Joke, RawJoke, JokeParser } from "components/JokeParser";
 import Head from "components/Head";
 import Logo from "components/Logo";
-import getJokes from "lib/jokes";
+import getJokes from "utilities/getJokes";
 import * as styles from "components/index.css";
 
 interface JokePageProps {
@@ -23,9 +23,13 @@ const JokePage = ({ currentJoke, remainingJokes }: JokePageProps) => {
   );
 };
 
+// only runs once at build time in production
+// in dev mode, runs on each request
 export const getStaticPaths = async () => {
   const jokes: RawJoke[] = await getJokes();
 
+  // grabs the slug from each joke and saves in an array which
+  // is passed to getStaticProps
   const paths = jokes.map((item) => {
     return {
       params: { slug: item.fields.slug },
@@ -40,6 +44,12 @@ export const getStaticPaths = async () => {
   };
 };
 
+
+/**
+* only runs at build time in production; in dev mode runs on each request;
+* takes paths from getStaticPaths and builds a page with each path (targetJoke) at the top
+* eventually this method will become non-performant as build time is On^2
+*/
 export async function getStaticProps(context: { params: { slug: any } }) {
   const jokes: RawJoke[] = await getJokes();
 

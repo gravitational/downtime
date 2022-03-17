@@ -1,20 +1,19 @@
 import NextImage from "next/image";
 import Link from "next/link";
-import { HEADLINES, HeadlineProps } from "data/jokes";
+import { RawJoke } from "./types";
 import { tweetEncoder } from "utilities/encoder";
-import * as styles from "./JokeParser.css"
+import * as styles from "./JokeParser.css";
 
-console.log("joke-count:", HEADLINES.length);
+export interface JokeParserProps {
+  jokes: RawJoke[];
+}
 
-const JokeParser = () => {
+const JokeParser = ({ jokes }: JokeParserProps) => {
   return (
     <div className={styles.outer}>
-      <div
-        id="centralizer"
-        className={styles.inner}
-      >
-        {HEADLINES.map((joke: HeadlineProps, i) => (
-          <Joke joke={joke} key={`${i} + item`} />
+      <div id="centralizer" className={styles.inner}>
+        {jokes.map((joke) => (
+          <Joke joke={joke} key={joke.sys.id} />
         ))}
       </div>
     </div>
@@ -22,19 +21,27 @@ const JokeParser = () => {
 };
 
 interface JokeProps {
-  joke: HeadlineProps;
+  joke: RawJoke;
+  isIndividualJoke?: boolean;
 }
 
-const Joke = ({ joke }: JokeProps) => {
-  const dateArray = joke.pubDate.toDateString().split(" ");
+export const Joke = ({ joke, isIndividualJoke = false }: JokeProps) => {
+  const {
+    smoker,
+    headline,
+    image,
+    pubDate,
+    anchor,
+    twitterEmbeddedCode,
+    slug,
+  } = joke.fields;
+
+  const dateArray = new Date(pubDate).toDateString().split(" ");
   const [weekday, month, day, year] = dateArray;
 
-  const anchorString = joke.anchor ? joke.anchor.toString() : "00000";
-  const hrefString = tweetEncoder(
-    joke.headline,
-    anchorString,
-    joke.twitterImage
-  );
+  const anchorString = anchor || "00000";
+
+  const hrefString = tweetEncoder(headline, slug, twitterEmbeddedCode);
 
   return (
     <>
@@ -42,19 +49,26 @@ const Joke = ({ joke }: JokeProps) => {
       <div className={styles.anchorOuter}>
         <a id={anchorString} rel="nofollow"></a>
       </div>
-      <div
-        id="card"
-        className={styles.cardOuter}
-      >
-        <div className={styles.headline}>
-          <span className={styles.span1}>
-            {joke.smoker} {joke.headline}
-          </span>
-        </div>
-        {joke.image && (
+      <div id="card" className={styles.cardOuter}>
+        {isIndividualJoke ? (
+          <div className={styles.headline}>
+            <span className={styles.span1}>
+              {smoker} {headline}
+            </span>
+          </div>
+        ) : (
+          <Link href={`/jokes/${slug}`}>
+            <a className={styles.headline}>
+              <span className={styles.span1}>
+                {smoker} {headline}
+              </span>
+            </a>
+          </Link>
+        )}
+        {image && (
           <div className={styles.imageContainer}>
             <NextImage
-              src={joke.image}
+              src={"https:" + image.fields.file.url}
               alt="a hilariously apropos image"
               height="400px"
               width="600px"
@@ -72,7 +86,10 @@ const Joke = ({ joke }: JokeProps) => {
               </Link>
             </div>
 
-            <div title={`${weekday} • ${month} ${day}, ${year}`} className={styles.date}>
+            <div
+              title={`${weekday} • ${month} ${day}, ${year}`}
+              className={styles.date}
+            >
               {month} {day}
             </div>
           </div>

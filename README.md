@@ -16,8 +16,6 @@ Install dependencies with:
 
 ```bash
 yarn
- # or
-npm install
 ```
 
 ## Development
@@ -26,8 +24,6 @@ Run the development server with:
 
 ```bash
 yarn dev
-# or
-npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -40,72 +36,42 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 # Contribution Process
 ## Submitting Requests
-Create an issue for image suggestions and website changes. A priority tag (`P1`, `P2`, `P3`) may also be added.
+Create a request in Asana for website changes.
 
 ### Image Contributions:
 - **Image Sourcing:** Images should be open source or sourced from [istockphoto.com](https://www.istockphoto.com/).
-- **Image size:** Image size should be 1200px (horizontal) by 800px (vertical). The image name should be appended with `@2x` when added to the repo for optimal sizing by the browser.
-# Development Process
+- **Image size:** Image size should be 1200px (horizontal) by 800px (vertical) and less than 1MB. The image name should be appended with `@2x` for optimal sizing by the browser.
 
-## Daily Joke Publishing Protocol
-1. Create a branch to add the daily joke.
+# Adding and Publishing Jokes with Contentful
 
-2. Select a joke and corresponding image from the "Ready To Deploy" section [here](https://docs.google.com/document/d/13T4yOefHZg2io-KqJ9r0XDzbBWr9kN4_HvyGNZ3-IZQ/edit#). Move your selected joke to the "Live" section of this document.
+## Adding A Joke
 
-3. Add new joke to the bottom of the `RawJokes` array in `data/jokes.ts` as shown:
+1. Visit the "DowntimeData" space on Contentful.
 
-**Important:**
-  - `smoker`: If the joke begins with a word like "report" or "breaking", add that word (include the `:`; no space) to the optional `smoker` key. Add the rest of the joke to the `headline` key.
-  - `pubDate`:
-    - Month is zero-indexed. Jan = 0, Feb = 1, etc
-    - Day is one-indexed. 1 = 1, 2 = 2, etc
-  - `anchor`:
-    - 5 digit code that must be unique
-    - Protocol: start with `10..`. End with the current `joke-count`, which is visible in the console. For example, if the `joke-count` is `23`, `anchor` should be `10023`.
-  - `twitterImage`: will be updated in step 6 using the "Embed Tweet" option on Twitter.
-```js
-//RawJokes
-{
-    smoker: "Breaking:",
-    headline:
-      "Don’t Stare, But Kelsey Hightower Just Walked Into This Barnes & Noble",
-    image: "/assets/images/barnesAndNobleClackamas@2x.jpeg",
-    twitterImage: "pic.twitter.com/TCAe11Cto7",
-    pubDate: new Date(2022, 0, 1),
-    anchor: 10007,
-  },
-```
+2. To add a joke select the "Content" tab from the top navigation bar, verify that content type is "joke", and select "Add Joke" on right hand side.
 
-4. Open Twitter. Create a tweet and add the joke's image as "media" to your Twitter post. Publish tweet. **This tweet must not be deleted as it provides the source image used when sharing the tweet on Twitter.**
+3. Add joke data in each field:
 
-5. Open the kebab menu on your published Twitter post; select "Embed Tweet"; select "copy code".
+- **headline** (required): This is the joke.
+- **slug** (automatically generated): This is automatically generated based on the headline in a url friendly format. Please do not edit this field.
+  - _Note:_ Any changes to the headline BEFORE it is published will automically be reflected in the slug. After the joke is published, the slug will remain the same because it represents a live url.
+- **pubDate** (required): Date that joke will be published. Select date and **UPDATE TIMEZONE TO UTC-5:00** (the default UTC-4:00 will display dates slightly off). Time can remain at 00:00.
+  - _Note:_ The date applied to pubDate should be the same date selected for publishing the post.
+- **image** (required): follow prompts to "add existing media" or "add new media". Make sure that the image is set to "published" so it can be sent by Contentful.
+  - _Image size_: 
+    - Dimensions: image should be as close to 1200px width by 800px height as possible, but cannot be larger than these dimensions.
+    - File size: no larger than 1MB
 
-6. Replace the code in the `twitter.html` file in this repo with the copied code from Twitter:
+4. Schedule joke for publishing.
 
-```html
-<blockquote class="twitter-tweet">
-  <p lang="ht" dir="ltr">
-    bla bla bla <a href="https://t.co/5xEXIOt58j">pic.twitter.com/5xEXIOt58j</a> <!--this is the twitter media id -->
-  </p>
-  &mdash;
-  <a
-    href="https://twitter.com/zzzzz41646467/status/1486784514835714050?ref_src=twsrc%5Etfw"
-    >January 27, 2022</a
-  >
-</blockquote>
-<script
-  async
-  src="https://platform.twitter.com/widgets.js"
-  charset="utf-8"
-></script>
-```
-Replace the existing value for `twitterImage` in `data/jokes.ts` with the Twitter ID (`pic.twitter.com/5xEXIOt58j` in this example).
+## Set Publishing Schedule:
 
-7. Joke update is now complete. To check that the link was correctly created, run locally and click "share this on twitter" from the new joke entry on localhost. Append the uniform resource locater created by Twitter to your local url: `localhost:3000/#10023`. This should route the browser directly to the newly added joke.
+**Option 1 - Schedule Future Publishing Date:** The joke may be scheduled for a future publishing date that matches the "pubDate" field. In this case, select the dropdown to the right of the green "Publish" button and select "Set Schedule." Schedule the joke to be published on the "pubDate", at 9am GMT-05:00 (US EST).
 
-8. Create a pull request with these changes and follow pull request process below.
+**Option 2 - Publish Immediately:** If a joke should be published **immediately** select the green "Publish" button on the right hand side of the screen.
 
-9. Delete any extra tweets created during the development process. The tweet used for embedding the image must NOT be deleted.
+That's it for adding a joke - the integration with Vercel will immediately begin re-building the site with the new joke at publishing time.
+
 ## Overview of general contributions
 
 1. Checkout `main` and pull the latest version
@@ -116,7 +82,7 @@ Replace the existing value for `twitterImage` in `data/jokes.ts` with the Twitte
 
 4. Make changes
 
-5. See your changes by running the site on `http://localhost:3000/` with `yarn dev` or `npm run dev`
+5. See your changes by running the site on `http://localhost:3000/` with `yarn dev`
 
 6. Create a pull request detailing changes
 

@@ -1,5 +1,5 @@
 /**
- * This object has to be updated during the dev process!
+ * This object has to be updated during the dev process with a current test environment name!
  * @param environment the name of the Contentful environment 
  * @returns the appropriate space, accessToken, and environment name for the environment as a string
  */

@@ -17,7 +17,7 @@ const JokePage = ({ currentJoke, remainingJokes }: JokePageProps) => {
         headline={currentJoke.fields.headline}
       />
       <Logo />
-      <Joke joke={currentJoke} isIndividualJoke />
+      <Joke joke={currentJoke} isTargetJoke />
       <JokeParser jokes={remainingJokes} />
     </div>
   );

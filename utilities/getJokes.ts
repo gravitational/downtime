@@ -5,10 +5,10 @@ import getConfig from "./configManager";
 
 /**
  * Fetches the stored content from Contentful and stores it in a local cache.
- * Client-side use of getJokes will access the stored cache instead of 
- * re-fetching from Contentful's API.
- * The caching process may be unnecessary if the site is 100% statically generated
- * and should be reviewed. 
+ * If getJokes is called multiple times in the build process, Next will 
+ * access the stored cache instead of re-fetching from Contentful's API.
+ * The console.logs below are only useful in development, as getJokes is
+ * not called client-side.
  */
 
 let cacheCounter = 0;

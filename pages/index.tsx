@@ -2,7 +2,7 @@ import { RawJoke, JokeParser } from "components/JokeParser";
 import Head from "components/Head";
 import * as styles from "components/index.css";
 import { generateFeed } from "../scripts/gen-rss";
-import getJokes from "lib/jokes";
+import getJokes from "utilities/getJokes";
 import Logo from "components/Logo";
 export interface HomeProps {
   jokes: RawJoke[];

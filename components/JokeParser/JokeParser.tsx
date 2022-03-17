@@ -53,6 +53,7 @@ export const Joke = ({ joke, isTargetJoke = false }: JokeProps) => {
             <NextImage
               src={"https:" + image.fields.file.url}
               alt="a hilariously apropos image"
+              priority={isTargetJoke? true : false}
               height="400px"
               width="600px"
             />

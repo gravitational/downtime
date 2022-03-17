@@ -60,7 +60,7 @@ export default async function getJokes() {
 async function fetchJokesData() {
   // during development, pass string of target environment name (see ./configManager)
   // for production, getConfig() must be passed "master"
-  const config = getConfig("master");
+  const config = getConfig("test-env2");
 
   console.log("Fetching jokes data...");
 

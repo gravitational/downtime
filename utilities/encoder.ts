@@ -1,5 +1,10 @@
+const baseUrl = "https://www.downtime.dev";
 
+export const tweetEncoder = (headline: string, slug: string): string => {
+  const url = `${baseUrl}/jokes/${slug}`;
 
-export const tweetEncoder = (headline: string, anchor: string, image: string): string => {
-  return `https://twitter.com/intent/tweet?text=${encodeURIComponent(headline)}%20https%3A%2F%2Fdowntime.dev/%23${anchor}%20${image}`
-}
+  // tweet headline + summary-large-image twitter card
+  return `https://twitter.com/intent/tweet?text=${headline}%20${encodeURIComponent(
+    url
+  )}`;
+};

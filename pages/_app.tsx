@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import type { AppProps } from "next/app";
 import Layout from "components/Layout";
-import Head from "components/Head";
 import "../styles/globals.css";
 import { GTAGPageView } from "utilities/google/gtag";
 import { GTMPageView } from "utilities/google/gtm";
@@ -32,10 +31,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       {/* Google Tag Manager Start */}
       <Script
-      id="gtm-init"
-      strategy="afterInteractive"
-      dangerouslySetInnerHTML={{
-        __html: `
+        id="gtm-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -65,7 +64,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         }}
       />
       {/* Google Analytics End */}
-      <Head />
       <Layout>
         <Component {...pageProps} />
       </Layout>

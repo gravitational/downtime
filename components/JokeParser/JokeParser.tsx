@@ -1,20 +1,24 @@
 import NextImage from "next/image";
 import Link from "next/link";
-import { HEADLINES, HeadlineProps } from "data/jokes";
+import { RawJoke } from "./types";
 import { tweetEncoder } from "utilities/encoder";
-import * as styles from "./JokeParser.css"
+import * as styles from "./JokeParser.css";
 
-console.log("joke-count:", HEADLINES.length);
+export interface JokeParserProps {
+  jokes: RawJoke[];
+}
 
-const JokeParser = () => {
+/* 
+  receives a array of jokes and maps over them to return each joke. Is used:
+  - on homepage 
+  - on individual joke pages below the top joke
+*/
+const JokeParser = ({ jokes }: JokeParserProps) => {
   return (
     <div className={styles.outer}>
-      <div
-        id="centralizer"
-        className={styles.inner}
-      >
-        {HEADLINES.map((joke: HeadlineProps, i) => (
-          <Joke joke={joke} key={`${i} + item`} />
+      <div id="centralizer" className={styles.inner}>
+        {jokes.map((joke) => (
+          <Joke joke={joke} key={joke.sys.id} />
         ))}
       </div>
     </div>
@@ -22,63 +26,59 @@ const JokeParser = () => {
 };
 
 interface JokeProps {
-  joke: HeadlineProps;
+  joke: RawJoke;
+  isTargetJoke?: boolean;
 }
 
-const Joke = ({ joke }: JokeProps) => {
-  const dateArray = joke.pubDate.toDateString().split(" ");
+// renders each joke card
+export const Joke = ({ joke, isTargetJoke = false }: JokeProps) => {
+  const { pubDate, headline, image, slug } = joke.fields;
+
+  // pubDate is an ISO-8601 string
+  const dateArray = new Date(pubDate).toDateString().split(" ");
   const [weekday, month, day, year] = dateArray;
 
-  const anchorString = joke.anchor ? joke.anchor.toString() : "00000";
-  const hrefString = tweetEncoder(
-    joke.headline,
-    anchorString,
-    joke.twitterImage
-  );
+  // creates twitter sharing link
+  const hrefString = tweetEncoder(headline, slug);
 
   return (
-    <>
-      {/* Anchor is set above card so that navbar doesn't cover linked content */}
-      <div className={styles.anchorOuter}>
-        <a id={anchorString} rel="nofollow"></a>
-      </div>
-      <div
-        id="card"
-        className={styles.cardOuter}
-      >
-        <div className={styles.headline}>
-          <span className={styles.span1}>
-            {joke.smoker} {joke.headline}
-          </span>
-        </div>
-        {joke.image && (
+    <div id="card" className={styles.cardOuter}>
+      {/* targetJoke is the joke tied to each individual page; its <Link/> is disabled */}
+      <Link href={isTargetJoke? '' : `/jokes/${slug}`}>
+        <a>
+          <div className={styles.headline}>
+            <span className={styles.span1}>{headline}</span>
+          </div>
           <div className={styles.imageContainer}>
             <NextImage
-              src={joke.image}
+              src={"https:" + image.fields.file.url}
               alt="a hilariously apropos image"
               height="400px"
               width="600px"
             />
           </div>
-        )}
-        <div className={styles.shareOuter}>
-          <div className={styles.shareInner}>
-            <div className={styles.shareString}>
-              share this on{" "}
-              <Link href={hrefString}>
-                <a target="_blank" rel="noopener noreferrer">
-                  <span className={styles.span2}>twitter</span>
-                </a>
-              </Link>
-            </div>
+        </a>
+      </Link>
+      <div className={styles.shareOuter}>
+        <div className={styles.shareInner}>
+          <div className={styles.shareString}>
+            share this on{" "}
+            <Link href={hrefString}>
+              <a target="_blank" rel="noopener noreferrer">
+                <span className={styles.span2}>twitter</span>
+              </a>
+            </Link>
+          </div>
 
-            <div title={`${weekday} • ${month} ${day}, ${year}`} className={styles.date}>
-              {month} {day}
-            </div>
+          <div
+            title={`${weekday} • ${month} ${day}, ${year}`}
+            className={styles.date}
+          >
+            {month} {day}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

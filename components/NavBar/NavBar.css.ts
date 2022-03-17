@@ -8,15 +8,15 @@ export const nav = style({
   position: "fixed",
   top: "0px",
   background: "black",
-  zIndex: "50"
+  zIndex: "50",
 });
 
 export const bar = style({
   display: "flex",
   justifyContent: "center",
   width: "50%",
-  alignItems: "center"
-})
+  alignItems: "center",
+});
 
 export const a = style({
   fontSize: "20px",
@@ -25,19 +25,19 @@ export const a = style({
   justifyContent: "center",
   color: "#07F901",
   fontWeight: "bold",
-  marginLeft: "8px"
-})
+  marginLeft: "8px",
+});
 
 export const outerStack = style({
   display: "flex",
   width: "16px",
   flexDirection: "column",
-  justifyContent: "center"
-})
+  justifyContent: "center",
+});
 
 export const innerStack = style({
   width: "100%",
   height: "4px",
   background: "#07F901",
-  borderTop: "1px solid black"
-})
+  borderTop: "1px solid black",
+});

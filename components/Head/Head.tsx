@@ -39,23 +39,20 @@ const Head = ({ isHomePage = false, imageURL, headline }: HeadProps) => {
     : `https:${imageURL}`;
 
   const title = isHomePage
-    ? "Hard-hitting news while your code is compiling."
+    ? "Hard-hitting news while your code compiles."
     : headline;
   
   const description = "Hard-hitting news while your code compiles.";
 
   return (
     <NextHead>
+      {/* font import is in _document.tsx */}
       <title>downtime.dev</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <link rel="icon" href="/assets/favicon.ico" />
       <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
       <link rel="apple-touch-icon" href="/assets/favicon.ico" />
       <meta name="description" content={description} />
-      <style>
-        @import
-        url(&apos;https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap&apos;);{" "}
-      </style>
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
       <link rel="canonical" href={url} />
@@ -64,6 +61,7 @@ const Head = ({ isHomePage = false, imageURL, headline }: HeadProps) => {
       {!isHomePage && <meta property="og:description" content={description} />}
       <meta property="og:image" content={imagePath} />
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={url} />
       <meta name="twitter:title" content={title} />
     </NextHead>
   );

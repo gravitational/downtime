@@ -27,47 +27,38 @@ const JokeParser = ({ jokes }: JokeParserProps) => {
 
 interface JokeProps {
   joke: RawJoke;
-  isIndividualJoke?: boolean;
+  isTargetJoke?: boolean;
 }
 
-/* 
-  renders each joke
-  - if `isIndividualJoke=true`, this is the top joke on individual joke page. Thus joke renders without a link to joke's indivdual joke page
-*/
-export const Joke = ({ joke, isIndividualJoke = false }: JokeProps) => {
+// renders each joke card
+export const Joke = ({ joke, isTargetJoke = false }: JokeProps) => {
   const { pubDate, headline, image, slug } = joke.fields;
 
-  //pubDate is an ISO-8601 string
+  // pubDate is an ISO-8601 string
   const dateArray = new Date(pubDate).toDateString().split(" ");
   const [weekday, month, day, year] = dateArray;
 
-  //creates link for directly sharing joke to Twitter with joke headline and url of individual joke page pre-populated in tweet body
+  // creates twitter sharing link
   const hrefString = tweetEncoder(headline, slug);
 
   return (
     <div id="card" className={styles.cardOuter}>
-      {isIndividualJoke ? (
-        <div className={styles.headline}>
-          <span className={styles.span1}>{headline}</span>
-        </div>
-      ) : (
-        // Jokes rendered by JokeParser include a link to their individual joke page
-        <Link href={`/jokes/${slug}`}>
-          <a className={styles.headline}>
+      {/* targetJoke is the joke tied to each individual page; its <Link/> is disabled */}
+      <Link href={isTargetJoke? '' : `/jokes/${slug}`}>
+        <a>
+          <div className={styles.headline}>
             <span className={styles.span1}>{headline}</span>
-          </a>
-        </Link>
-      )}
-      {image && (
-        <div className={styles.imageContainer}>
-          <NextImage
-            src={"https:" + image.fields.file.url}
-            alt="a hilariously apropos image"
-            height="400px"
-            width="600px"
-          />
-        </div>
-      )}
+          </div>
+          <div className={styles.imageContainer}>
+            <NextImage
+              src={"https:" + image.fields.file.url}
+              alt="a hilariously apropos image"
+              height="400px"
+              width="600px"
+            />
+          </div>
+        </a>
+      </Link>
       <div className={styles.shareOuter}>
         <div className={styles.shareInner}>
           <div className={styles.shareString}>

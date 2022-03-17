@@ -55,7 +55,7 @@ Create a request in Asana for website changes.
 - **headline** (required): This is the joke.
 - **slug** (automatically generated): This is automatically generated based on the headline in a url friendly format. Please do not edit this field.
   - _Note:_ Any changes to the headline BEFORE it is published will automically be reflected in the slug. After the joke is published, the slug will remain the same because it represents a live url.
-- **pubDate** (required): Select the date the joke will be published and set timezone to UTC-5:00. Time can remain at default of 00:00. **IMPORTANT: Timezone must be set to UTC-5:00 in order to render properly.**
+- **pubDate** (required): Date that joke will be published. Select date and **UPDATE TIMEZONE TO UTC-5:00** (the default UTC-4:00 will display dates slightly off). Time can remain at 00:00.
   - _Note:_ The date applied to pubDate should be the same date selected for publishing the post.
 - **image** (required): follow prompts to "add existing media" or "add new media". Make sure that the image is set to "published" so it can be sent by Contentful.
   - _Image size_: 

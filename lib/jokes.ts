@@ -1,6 +1,5 @@
 import { readFileSync, writeFileSync } from "fs";
 import path from "path";
-import { useState } from "react";
 import { createClient } from "contentful";
 import getConfig from "./configManager";
 

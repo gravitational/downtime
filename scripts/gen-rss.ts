@@ -18,7 +18,7 @@ export async function generateFeed(jokes: RawJoke[]) {
       description: 
       `
       <image>
-        <url>{https:${headline.fields.image.fields.file.url}}</url>
+        <url>https:${headline.fields.image.fields.file.url}</url>
         <title>a hilariously apropos image</title>
       </image>
       `,

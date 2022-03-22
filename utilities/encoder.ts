@@ -1,5 +1,4 @@
-// const baseUrl = "https://www.downtime.dev";
-const baseUrl = "https://downtime-git-delia-update-rss-feed-gravitational.vercel.app";
+const baseUrl = "https://www.downtime.dev";
 
 export const tweetEncoder = (headline: string, slug: string): string => {
   const url = `${baseUrl}/jokes/${slug}`;

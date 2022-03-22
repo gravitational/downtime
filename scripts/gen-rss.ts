@@ -6,12 +6,8 @@ export async function generateFeed(jokes: RawJoke[]) {
   const feed = new RSS({
     title: "downtime.dev",
     description: "Hard-hitting tech news while your code compiles.",
-    // site_url: "https://www.downtime.dev",
-    site_url:
-      "https://downtime-git-delia-update-rss-feed-gravitational.vercel.app",
-    // feed_url: "https://www.downtime.dev/feed.xml",
-    feed_url:
-      "https://downtime-git-delia-update-rss-feed-gravitational.vercel.app/feed.xml",
+    site_url: "https://www.downtime.dev",
+    feed_url: "https://www.downtime.dev/feed.xml",
   });
 
   jokes.forEach((headline) => {

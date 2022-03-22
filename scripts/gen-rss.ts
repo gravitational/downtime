@@ -17,6 +17,7 @@ export async function generateFeed(jokes: RawJoke[]) {
   jokes.forEach((headline) => {
     feed.item({
       title: headline.fields.headline,
+      description: "A hilariously apropos image",
       enclosure: {
         url: `https:${headline.fields.image.fields.file.url}`,
       },

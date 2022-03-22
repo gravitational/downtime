@@ -6,14 +6,16 @@ export async function generateFeed(jokes: RawJoke[]) {
   const feed = new RSS({
     title: "downtime.dev",
     description: "Hard-hitting tech news while your code compiles.",
-    site_url: "https://www.downtime.dev",
-    feed_url: "https://www.downtime.dev/feed.xml",
+    // site_url: "https://www.downtime.dev",
+    // feed_url: "https://www.downtime.dev/feed.xml",
+    site_url: "https://downtime-git-delia-update-rss-feed-gravitational.vercel.app",
+    feed_url: "https://downtime-git-delia-update-rss-feed-gravitational.vercel.app/feed.xml",
   });
 
   jokes.forEach((headline) => {
     feed.item({
       title: headline.fields.headline,
-      description: "A hilariously apropos image",
+      // description: "A hilariously apropos image",
       enclosure: {
         url: `https:${headline.fields.image.fields.file.url}`,
       },

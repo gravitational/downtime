@@ -13,7 +13,10 @@ export async function generateFeed(jokes: RawJoke[]) {
   jokes.forEach((headline) => {
     feed.item({
       title: headline.fields.headline,
-      description: `https:${headline.fields.image.fields.file.url}`,
+      description: "Hard-hitting tech news while your code compiles.",
+      enclosure: {
+        url: `https:${headline.fields.image.fields.file.url}`,
+      },
       url: `${feed.site_url}/jokes/${headline.fields.slug}`,
       date: headline.fields.pubDate,
     });
